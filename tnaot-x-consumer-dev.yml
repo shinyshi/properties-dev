@@ -1,0 +1,15 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+feign:
+  hystrix:
+    enabled: true
+management: 
+  security:
+    enabled: false
+foo:
+  bar: 123456
