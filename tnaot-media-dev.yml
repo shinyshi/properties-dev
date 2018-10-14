@@ -1,6 +1,8 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
+  application:
+    name: tnaot-media
   datasource:
     url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
@@ -33,22 +35,26 @@ spring:
     port: 6379
     password: 123456
     timeout: 0
+    database: 3 #dbindex = 3
     pool:
       max-active: 8 
       max-idle: 8
       min-idle: 1
       max-wait: 2000
+  rabbitmq:
+    host: 192.168.1.136
+    port: 5672
+    username: rabbit
+    password: 123456
+    publisher-confirms: true
+    virtual-host: /
   http:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
-  messages:
-    basename: i18n/messages
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
-  configuration:
-    call-setters-on-nulls: true
 pagehelper:
   helperDialect: mysql
   reasonable: false
@@ -72,14 +78,12 @@ management:
   security:
     enabled: false
 ftp:
-  host: 192.168.1.136
+  host: 47.52.144.242
   port: 21
-  username: upload
-  password: wenjianshangchuan
-  basePath: /home/upload
-  fileServerPath: http://192.168.1.136:9999
+  username: ftpuser
+  password: ftpuser20180608
+  basePath: /
+  fileServerPath: http://47.52.144.242:7003
   imageFolder: image
   thumbFolder: thumbs
   videoFolder: video
-path:
-  defaultImage: images/defaultImage.png
