@@ -69,7 +69,7 @@ spring:
       min-idle: 1
       max-wait: 2000
   rabbitmq:
-    host: 192.168.1.112
+    host: 192.168.1.121
     port: 5672
     username: rabbit
     password: 123456
