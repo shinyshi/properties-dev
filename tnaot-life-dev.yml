@@ -31,33 +31,6 @@ spring:
       stat-view-servlet:
         login-username: druid
         login-password: druid
-  mongcentShop:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
-    username: dbuser
-    password: asdQWE!@#
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      initial-size: 2
-      min-idle: 2
-      max-active: 20
-      max-wait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 30000
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      validationQuery: select 'x'
-      poolPreparedStatements: true
-      maxPoolPreparedStatementPerConnectionSize: 20
-      filters: stat,wall
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      useGlobalDataSourceStat: true
-      web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-      stat-view-servlet:
-        login-username: druid
-        login-password: druid
   redis:
     host: 192.168.1.136
     port: 6379
@@ -111,13 +84,5 @@ ftp:
   imageFolder: image
   thumbFolder: thumbs
   videoFolder: video
-push:
-  jpush:
-    app-key: 8a4b4260053b7487e3de4e8f
-    master-secret: 86ed8517af4a4e16e9c85124
-    is-pro: false
-memcached:
-  servers: 47.52.144.242:22122
-  poolSize: 10
-  timeout: 3000
-  sanitizeKeys: 10
+path:
+  defaultImage: images/defaultImage.png
