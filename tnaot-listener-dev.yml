@@ -48,6 +48,9 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
+    listener: 
+      simple:
+        acknowledge-mode: manual
   http:
     multipart:
       max-file-size: 50MB
