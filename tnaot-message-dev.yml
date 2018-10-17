@@ -6,7 +6,7 @@ spring:
   session
     store-type: redis
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_trans_message?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
@@ -49,10 +49,6 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
-  http:
-    multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
