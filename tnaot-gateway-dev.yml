@@ -1,4 +1,7 @@
 spring:
+  mvc:
+    favicon:
+      enabled: false
   datasource:
     url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
@@ -60,16 +63,41 @@ feign:
   hystrix:
     enabled: true
 hystrix:
-  command:
+  threadpool:
     default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
 management: 
   security:
     enabled: false
+memcached:
+  host: 47.52.144.242
+  port: 22122
 zuul:  
+  okhttp:
+    enabled: true
+  ribbon-isolation-strategy: THREAD
+  thread-pool:
+    use-separate-thread-pools: true
+    thread-pool-key-prefix: zuulgw
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+    max-total-connections: 10000
+    max-per-route-connections: 5 
   routes:  
     api-life: 
       path: /life/**

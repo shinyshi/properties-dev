@@ -1,10 +1,12 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
-  application:
-    name: tnaot-media
+  mvc:
+    favicon:
+  session:
+    store-type: redis
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_trans_message?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
@@ -35,7 +37,6 @@ spring:
     port: 6379
     password: 123456
     timeout: 0
-    database: 3 #dbindex = 3
     pool:
       max-active: 8 
       max-idle: 8
@@ -43,47 +44,18 @@ spring:
       max-wait: 2000
   rabbitmq:
     host: 192.168.1.112
-    port: 5671
+    port: 5672
     username: rabbit
     password: 123456
     publisher-confirms: true
     virtual-host: /
-  http:
-    multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
 pagehelper:
   helperDialect: mysql
   reasonable: false
   supportMethodsArguments: true
-  params: count=countSql
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
-management: 
-  security:
-    enabled: false
-ftp:
-  host: 47.52.144.242
-  port: 21
-  username: ftpuser
-  password: ftpuser20180608
-  basePath: /
-  fileServerPath: http://47.52.144.242:7003
-  imageFolder: image
-  thumbFolder: thumbs
-  videoFolder: video
+  params: count=countSq

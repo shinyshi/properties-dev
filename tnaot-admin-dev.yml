@@ -69,7 +69,7 @@ spring:
       min-idle: 1
       max-wait: 2000
   rabbitmq:
-    host: 192.168.1.121
+    host: 192.168.1.112
     port: 5672
     username: rabbit
     password: 123456
@@ -120,9 +120,11 @@ ftp:
   videoFolder: video
 push:
   jpush:
-    app-key: 8a4b4260053b7487e3de4e8f
-    master-secret: 86ed8517af4a4e16e9c85124
-    is-pro: false
+    andAppKey: 68729133aaf2c03f1e9d763c
+    andMasterSecret: 54e9acaabc477022e202010b
+    iosAppKey: 12c6c437e7f0bd35db10a9c7
+    iosMasterSecret: 6b56e7e47d8d84fd4c0a52b1
+    isPro: false
 memcached:
   servers: 47.52.144.242:22122
   poolSize: 10
