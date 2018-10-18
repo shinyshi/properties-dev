@@ -65,34 +65,35 @@ pagehelper:
   reasonable: false
   supportMethodsArguments: true
   params: count=countSql
-payconfig:  
-  alipay:
-    app-id: 2018092561526368
-    pay-url: https://openapi.alipay.com/gateway.do
-    ras-private-key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCP7ZP+ny+FE/kZGcMj7nyyqfc4mB3r11VInZoGMRPyi27q9A2YTZ+GQUbuINLG9emD4tZULMrQWfiz2h/LVqVW4dIYV3UPN04tdjrJf7pbIKiO2sr2XeSOlxlarfwOJHEeiDIWHPKnrazTByAy5gQ9JQIaNDn7uJDfMUbc51nuhenXe4BJjnjkouHtGldEYiURbDagBA3Q6zT9XXmPQUUqSHn290kMOYIxNWVVlT49Hfdy28Ik0sW/ynu1XliUqbbEgFGPKhgnvOgtSMs/aWBbhVZ3XNggsf0xlJEPd/3TlJtgl9lZdos/yE8V/TUPK6uUUtRyS9GQqJtRwJOyMcYzAgMBAAECggEAYjqLHuQV0oVnJLJodEV35ZgKmh13jlZQZlbpoAAu1QJEmSYngSK5FS/H8Q2FzTRYQyK1lI1dfgVpr5XWzTg9b6Z/dQ17Xv8n4+8lABCkZz1KzPSWQL6kFo0ZSMIlnKFScrwRMvZexgHKSdw7JYHGstRnMusiB6JXfXxsGKfswNSp0GTDGV/EqPW9hLK+RdTut7E5QF+bZq8ijVbCtoxzfqK9PLlWkHmE1VcXkEoZ1q0X0xqrsL7Ji5KHwpI5SRPsguR4URuy9bEdbmx/4t4ln6UWDYNEwUQlUe3ZSq+B9r6H4UarpEZzvGHC4w4B+V1LuOzSvpEPU+Hsh/Lnnx2TgQKBgQDnIQ0LF0JnP0ndxj3U1C2UOh7+6u0m2R7WLfooMPxk86nO7s+KXW1pBU7UZcjooIPU4IxwUdXFB6eVYQ2bfAN0+edScHCe2YP8QNhXzQSvFCB7haHz+rfHmJLUUIL34AhwlULxePKzkMps3k1/UcrJaNcj3VqluH4+Iy2hDY0U+wKBgQCfamLOxKog45sBWEPV87xNALG3ckeww9CHrE6TXSzHm4vfdkiCmUbHicoDIpz6Qq5KUHPdgOBfTbO1K3YUWV0aDeZzhtK5uJwr+8RjyoAd2sUF4N9fBF0qQNjUjXSy8qy674MrTkGt0TWoUGgdXH7YbV5pCq/MWTBErLkLuSweKQKBgCNQFGsWYanerI16xWWoCVK1UpkGEbe2wpRcr/TGDznpVI9uQz1Tquy5x+KBrqGELMAwkqRyjGOvGLak/mw8FVcg+2vIDBzpBNZcnfFEPKv3OkNFFoptSvju4bgYmPoAO6nf1DuKjCJNQ/BAQrzqJT6CiyRKpJffSUJ7I3SQ2nZTAoGABLvJ903Lp3Jate2DBiVYoAi3PjU8f7kwxfaN1r5biAnMW3RNruMSQPaMcw9iDeRQ/I/rANbE0s+h2G1T8kK9CvsCrseAFleu+3dcW4I1z60hUI1e1JlyksCeL6GLp4yhKGPYRz7poFmn+Dl6/fQzKAYHWaMhmTXEwyVF0V1MPBECgYBrG5iB46+jWm1ZRT6cDMJYupfkcH4CzfiLY/wY7894akSkkg6tnTarQh51Mq82epm8BEh1K2EM9RkS0T2bLh/bPkKa8O9ofeINmWSPE3LEepQ+yhb9GjsDAfy+C/XPhxuCPRdm8GRVKrWnQf76FOHwllSgg9H0qalKu+Zc/pyJjw==
-    notify-url: http://rest.tnaot.com:8080/shop/notify/payment/alipay
-    timeout-express: 30
-    seller-id: 2088231841236080
-  tenpay:
-    app-id: wxd4d3c645268d1b14
-    app-secret: 746a6d3ca6f6499055effad514cd7538
-    app-mch-id: 1515844081
-    api-key: B88A2FB43746BC00F6B47993FC42B70F
-    notify-url: http://rest.tnaot.com:8080/shop/notify/payment/tenpay
-  huione:
-    app-id: 2f73c4cf27abee6e
-    pay-url: https://dev.huione.com/?_c=gateway&_a=orderPay
-    notify-url: http://rest.tnaot.com:8080/shop/notify/order/huione
-    ras-private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALyl/B0RVu6HJq/M7tJurnnAG38d2HQD/AUjhC5nTj5bsxT6VjzTEvzeTe7c2bPfK9/2IkOK7XjOFwE6JyEXxM1N1kPo2q4xh5rukhtlBSAijx2RebHsRtq6DI+vJgY5BBC0ZcuwR91B9gbVBfbj9isu6q2CgftkHbYFR/Fo8aQrAgMBAAECgYEAoZflD9ksiAIJJ4n6AROCLRRb+VVNdoN7O8OilEU1hsDx88REXrHHkAe05ikT6rn+UUf7LbQxmsuedRSlM/myP1mgcixhtAgIiZdnrXw3qZKqYW4NODHl5nwYWsQXV1paooeMqRO5X2KBAOgvhHkSF63UGDkOGkvo7Suzq24Rl2ECQQDoLCNDr5SvoeiTApXAPt7NXI7eiss+kwbIietjIdhm75it/tz8eb2Nku0+yuoxRKeoYvav9G9CMEcZ3xrKUW/5AkEA0AJXPGvckPPRF/a0u4+gBOSKjmveEFRvozCU76mwaFtGhMvIYslppOYgREOL+rk+k2ZoAgzl8zK78DZOaG2GQwJAbdws16NmpPDlH2MyvyRAw0YP6KgeYj6qEAyLEH58asDnKzYVFXb5xdsHXhYgWS3Wc6xYdIwidVxo2IokoCWG6QJAJhfnpfcS47DjIAJcQuUgpwS7oy1583+jGj2xaNqopdPhbDxtrDm6kSpbymScZAQ8w33DmmyGSC2IYYtwfItiRQJBALCmhfZ73O6wb9+SgWP3wQe/KLMXQftlFQyY69iEQbMfvhZ7V7SXK+M/tFHRWXaswkVZ7LMjMMNDHMMYcuHMwcA=
-    alipay-public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIF5gfNdMLSWdL7Bnga5zQbiH1G+Gum6N0lNiGvfEgTYeiZUdbWX6qgIErXqJWC65mriu8ZPBJO+GWUbqeNMszrCv7XgkL8sS40S+mSEmY7Fii6KGaWJTGl970C3FK6WZmv0Gez8Iqjt1LcRzrum0N1xzoJfoVZ1Z+E8LjChO0pQIDAQAB
-  mpay:
-    merc-id: 8888880001533693
-    pay-type: MPay
-    ccy: USD
-    sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
-    pay-order-url: https://business.bestmpay.com/upg/v2/createWebOrder
-    pay-order-url-h5: https://business.bestmpay.com/upg/v2/createWapOrder
-    query-order-url: https://business.bestmpay.com/upg/v2/queryOrder
-    refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
-    return-url: http://rest.tnaot.com:8080/shop/notify/payment/front/mpay
-    notify-url: http://rest.tnaot.com:8080/shop/notify/payment/mpay
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+hystrix:
+  threadpool:
+    default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management: 
+  security:
+    enabled: false
