@@ -59,8 +59,3 @@ pagehelper:
   reasonable: false
   supportMethodsArguments: true
   params: count=countSq
-feign:
-  httpclient:
-    enabled: false
-  okhttp:
-    enabled: true
