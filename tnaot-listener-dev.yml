@@ -73,9 +73,9 @@ feign:
   hystrix:
     enabled: true
   httpclient:
-    enabled: true
-  okhttp:
     enabled: false
+  okhttp:
+    enabled: true
 hystrix:
   threadpool:
     default:
