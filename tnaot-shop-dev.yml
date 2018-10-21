@@ -1,7 +1,5 @@
 logging:
   config: classpath:logback-dev.xml
-management:
-  context-path: /shop
 spring:
   mvc:
     favicon:
@@ -57,16 +55,6 @@ pagehelper:
   reasonable: false
   supportMethodsArguments: true
   params: count=countSql
-ftp:
-  host: 192.168.1.136
-  port: 21
-  username: upload
-  password: wenjianshangchuan
-  basePath: /home/upload
-  fileServerPath: http://192.168.1.136:9999
-  imageFolder: image
-  thumbFolder: thumbs
-  videoFolder: video
 payconfig:  
   alipay:
     app-id: 2018092561526368
@@ -98,3 +86,21 @@ payconfig:
     refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
     return-url: http://rest.tnaot.com:8080/shop/notify/payment/front/mpay
     notify-url: http://rest.tnaot.com:8080/shop/notify/payment/mpay
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+management:
+  context-path: /shop
+  security:
+    enabled: false
