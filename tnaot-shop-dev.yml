@@ -1,5 +1,7 @@
 logging:
   config: classpath:logback-dev.xml
+management:
+  context-path: shop
 spring:
   mvc:
     favicon:
