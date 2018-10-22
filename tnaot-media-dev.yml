@@ -87,3 +87,8 @@ ftp:
   imageFolder: image
   thumbFolder: thumbs
   videoFolder: video
+memcached:
+  servers: 47.52.144.242:22122
+  poolSize: 10
+  timeout: 3000
+  sanitizeKeys: 10
