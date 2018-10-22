@@ -70,7 +70,7 @@ payconfig:
     api-key: B88A2FB43746BC00F6B47993FC42B70F
     notify-url: http://rest.tnaot.com:8080/shop/notify/payment/tenpay
   huione:
-    app-id: 7e6b35bcdb0d2337
+    app-id: 1
     pay-url: https://open.huione.com?_c=gateway&_a=orderPay
     notify-url: http://rest.tnaot.com:8080/shop/notify/order/huione
     ras-private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAL4EI0GLhxrsrS5aY78NziMi8tLnwVHubqif0sn/GXuTnUjtLFdkOVF2ZB4USxQIVzIza73K3EWr/yoO037uqJ7n6yAGo4QgV0GdJ8yOLAPDHe9XLsvMd3xTwJbryzdKtw2IIo0565CSzCJ/60E3coDwQRXqDHIQB9I4Oo4TnoIJAgMBAAECgYEAlDmAExo3ey5S7cy+8INhYRFbIGB+8l2vXsTF1qKziy2cTQ4OP+HDwKM8+CXWZzsWYeewzS2Y5JSGCJXmL6cWSv6jlvB50DBF3wVAejnwk0dERLuHfp1ZGvMX8r7Vrtzp1kyzqs9xC1k/rNwAJZXcd10AXtWytY4FEKPSVHW+4c0CQQDm41USo5vYURC0+mPjIr/ThBmCHwBqPh5tv+qzkfC1k6vFkh/VD4rXU/TpcjeKm8+0kOQuEOU+xFgpZPdNQ5ATAkEA0q7NEivXEKVGGSN2JXOHcsFjyCGQwuVYDHS6YxN3IfJMB5aQYYzauJ1y1qtYdB46kT5GFaZV7R4MFUd4BKhA8wJBAJ+bVxvjbcBDicERtis1wlV9ZATHWYoYFwDXQm+P204qHvwc31RxwhDIQO1/v1VaEGNKJfKSS2bwY+F5olsO8XECQElzJ4tuPUxQUl/xPP9Rh6c6RM9A5HcN/eRZzaE86AutrVP36d4YfShfu+mbUvsojsKUM1rY4pwIHa5NfEojXoECQGovut1b1fBYrfcqV9qnIJL721WvqkPl3lPT8ro4NIrXvHqgULkeKL5ZSfyQIafQD1RzhNzAXn71mJZreAWWCqA=
