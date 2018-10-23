@@ -120,8 +120,8 @@ ftp:
   videoFolder: video
 push:
   jpush:
-    andAppKey: 68729133aaf2c03f1e9d763c
-    andMasterSecret: 54e9acaabc477022e202010b
+    andAppKey: 8a4b4260053b7487e3de4e8f
+    andMasterSecret: 86ed8517af4a4e16e9c85124
     iosAppKey: 12c6c437e7f0bd35db10a9c7
     iosMasterSecret: 6b56e7e47d8d84fd4c0a52b1
     isPro: false
