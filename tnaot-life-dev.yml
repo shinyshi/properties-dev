@@ -86,4 +86,4 @@ ftp:
   videoFolder: video
 path:
   defaultImage: http://refile.tnaot.com/image/2018/10/24/252a9b16113841d5992cb67a925971c2.jpg
-  idDistrictUrl: http://192.168.1.136:8074/json/
+  ipDistrictUrl: http://192.168.1.136:8074/json/
