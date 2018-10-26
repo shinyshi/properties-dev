@@ -5,7 +5,7 @@ spring:
     favicon:
       enabled: false
   datasource:
-    url: jdbc:mysql://47.52.144.242:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
