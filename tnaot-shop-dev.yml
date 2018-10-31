@@ -104,3 +104,13 @@ management:
   context-path: /shop
   security:
     enabled: false
+rechargeConfig:
+  smart:
+    tokenUrl: https://mife.smart.com.kh:8243/token
+    rechargeUrl: https://mife.smart.com.kh:8243/evc/topup/V1.0
+    userName: koh.thmey
+    password: K04THy%%$$
+    evcNumber: 98195111
+    evcPassword: MTIzNDU2
+    consumerKey: AJNHhDNoQOZQmWzM9ODjfU8G4mAa
+    consumerSecret: GxNcGvvwcmumtIfQFnyS3JQvGLQa
