@@ -104,7 +104,7 @@ management:
   context-path: /shop
   security:
     enabled: false
-rechargeConfig:
+rechargeconfig:
   smart:
     token-url: https://mife.smart.com.kh:8243/token
     recharge-url: https://mife.smart.com.kh:8243/evc/topup/V1.0
