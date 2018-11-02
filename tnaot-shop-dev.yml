@@ -94,12 +94,8 @@ feign:
   hystrix:
     enabled: true
 hystrix:
-  threadpool:
+  command:
     default:
-      coreSize: 50
-      maximumSize: 10000
-      allowMaximumSizeToDivergeFromCoreSize: true
-      maxQueueSize: -1
       execution:
         isolation:
           thread:
