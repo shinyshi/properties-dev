@@ -88,12 +88,13 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
 ribbon: 
-  ConnectTimeout: 60000
-  ReadTimeout: 60000 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 1
   MaxTotalHttpConnections: 10000
   MaxConnectionsPerHost: 3000
-management: 
+management:
+  context-path: /listener
   security:
     enabled: false
