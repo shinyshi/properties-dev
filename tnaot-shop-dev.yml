@@ -93,13 +93,28 @@ eureka:
 feign:
   hystrix:
     enabled: true
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
 hystrix:
-  command:
+  threadpool:
     default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 60000
+  ReadTimeout: 60000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
 management:
   context-path: /shop
   security:
