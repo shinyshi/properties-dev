@@ -121,3 +121,7 @@ recharge:
     evc-password: MTIzNDU2
     consumer-key: AJNHhDNoQOZQmWzM9ODjfU8G4mAa
     consumer-secret: GxNcGvvwcmumtIfQFnyS3JQvGLQa
+  paygo:
+    address: https://processing2.paygo24.com/paygoservice.asmx
+    username: 319866
+    password: DFf49AB5
