@@ -126,6 +126,7 @@ recharge:
     username: 319866
     password: DFf49AB5
   seatel:
+    address: http://172.22.188.20:11999/SeatelPayment/pay.jsp
     private-key: 9834a62b4ec7c78a5424932bfdedfd74
     shopid: shoptest
     terminalid: shoptest0001
