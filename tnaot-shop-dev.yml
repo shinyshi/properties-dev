@@ -125,3 +125,7 @@ recharge:
     address: https://processing2.paygo24.com/paygoservice.asmx
     username: 319866
     password: DFf49AB5
+  seatel:
+    private-key: 9834a62b4ec7c78a5424932bfdedfd74
+    shopid: shoptest
+    terminalid: shoptest0001
