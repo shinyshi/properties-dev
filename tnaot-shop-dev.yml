@@ -41,11 +41,6 @@ spring:
       max-idle: 8
       min-idle: 1
       max-wait: 2000
-  data:
-    mongodb:
-      host: 192.168.1.112
-      database: admin
-      port: 27017
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
