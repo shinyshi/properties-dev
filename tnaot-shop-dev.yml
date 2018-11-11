@@ -41,10 +41,9 @@ spring:
       max-idle: 8
       min-idle: 1
       max-wait: 2000
-  http:
-    multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
+  data:
+    mongodb:
+      uri: mongodb://root:123456@192.168.1.112:27017/tnaot
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
