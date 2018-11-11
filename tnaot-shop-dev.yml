@@ -43,7 +43,7 @@ spring:
       max-wait: 2000
   data:
     mongodb:
-      uri: mongodb://192.168.1.112:27017/tnaot
+      uri: mongodb://root:123456@192.168.1.112:27017/admin
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
