@@ -85,6 +85,16 @@ payconfig:
     refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
     return-url: http://rest.tnaot.com:8080/shop/notify/payment/front/mpay
     notify-url: http://rest.tnaot.com:8080/shop/notify/payment/mpay
+  pipay:
+    merc-id: 102425
+    ccy: USD
+    sid: 5531
+    did: 8085
+    pay-order-url: https://onlinepayment-test.pipay.com/starttransaction
+    query-order-url: https://onlinepayment-test.pipay.com/rest-api/verifyTransaction
+    return-url: http://rest.tnaot.com:8080/rest/shop/notify/front/pipay
+    front-fail-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
+    front-success-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
 eureka:
   client:
     healthcheck:
