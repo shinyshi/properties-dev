@@ -142,7 +142,7 @@ payconfig:
     app-id: wxd4d3c645268d1b14
     app-secret: 746a6d3ca6f6499055effad514cd7538
     app-mch-id: 1515844081
-    api-key: B88A2FB43746BC00F6B47993FC42B70F
+    api-key: 1af3ecc644f4478aabaeb386fdedaa2b
     notify-url: http://rest.tnaot.com:8080/shop/notify/payment/tenpay
   huione:
     app-id: 2f73c4cf27abee6e
