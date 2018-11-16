@@ -154,3 +154,34 @@ payconfig:
     ccy: USD
     sign-key: zvyDjCFeAgjjCzZmPbnzAofwXEpJYlwi
     refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
+    query-order-url: https://business.bestmpay.com/upg/v2/queryOrder
+  pipay:
+    merc-id: 102425
+    ccy: USD
+    sid: 5531
+    did: 8085
+    pay-order-url: https://onlinepayment-test.pipay.com/starttransaction
+    query-order-url: https://onlinepayment-test.pipay.com/rest-api/verifyTransaction
+    return-url: http://rest.tnaot.com:8080/rest/shop/notify/front/pipay
+    front-fail-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
+    front-success-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
+recharge:
+  smart:
+    token-url: https://mife.smart.com.kh:8243/token
+    recharge-url: https://mife.smart.com.kh:8243/evc/topup/V1.0
+    user-name: koh.thmey
+    password: K04THy%%$$
+    evc-number: 98195111
+    evc-password: MTIzNDU2
+    consumer-key: AJNHhDNoQOZQmWzM9ODjfU8G4mAa
+    consumer-secret: GxNcGvvwcmumtIfQFnyS3JQvGLQa
+  paygo:
+    address: https://processing2.paygo24.com/paygoservice.asmx
+    username: 319866
+    password: DFf49AB5
+  seatel:
+    address: http://172.22.188.20:11800/SeatelPayment/pay.jsp
+    private-key: e3780654cec00474ae689b1056bb2515
+    shopid: kohtmey
+    terminalid: kohtmey0001
+
