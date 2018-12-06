@@ -61,7 +61,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-#    password: 123456
+    password: 123456
     timeout: 0
     pool:
       max-active: 8 
@@ -71,8 +71,8 @@ spring:
   rabbitmq:
     host: 127.0.0.1
     port: 5672
-#    username: rabbit
-#    password: 123456
+    username: guest
+    password: guest
     publisher-confirms: true
     virtual-host: /
   http:
