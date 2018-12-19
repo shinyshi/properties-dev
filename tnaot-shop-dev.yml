@@ -131,9 +131,9 @@ recharge:
     consumer-key: AJNHhDNoQOZQmWzM9ODjfU8G4mAa
     consumer-secret: GxNcGvvwcmumtIfQFnyS3JQvGLQa
   paygo:
-    address: https://processing2.paygo24.com/paygoservice.asmx
-    username: 319866
-    password: DFf49AB5
+    address: https://api2.paygo24.com/paygoservice.asmx
+    username: 46
+    password: 123456
   seatel:
     address: http://172.22.188.20:11800/SeatelPayment/pay.jsp
     private-key: e3780654cec00474ae689b1056bb2515
