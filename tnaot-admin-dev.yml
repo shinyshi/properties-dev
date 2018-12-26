@@ -58,6 +58,33 @@ spring:
       stat-view-servlet:
         login-username: druid
         login-password: druid
+    mongcentMarketing:
+      url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+      username: dbuser
+      password: asdQWE!@#
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        initial-size: 2
+        min-idle: 2
+        max-active: 20
+        max-wait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 30000
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        validationQuery: select 'x'
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,wall
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+        web-stat-filter:
+          exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+        stat-view-servlet:
+          login-username: druid
+          login-password: druid
   redis:
     host: 192.168.1.112
     port: 6379
