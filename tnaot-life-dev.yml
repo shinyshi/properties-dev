@@ -5,7 +5,7 @@ spring:
     favicon:
       enabled: false
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
@@ -32,7 +32,7 @@ spring:
         login-username: druid
         login-password: druid
   redis:
-    host: 192.168.1.136
+    host: 192.168.1.112
     port: 6379
     password: 123456
     timeout: 0

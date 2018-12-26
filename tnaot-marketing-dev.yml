@@ -3,10 +3,9 @@ logging:
 spring:
   mvc:
     favicon:
-  session:
-    store-type: redis
+      enabled: false
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_trans_message?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
@@ -38,20 +37,34 @@ spring:
     password: 123456
     timeout: 0
     pool:
-      max-active: 8 
+      max-active: 8
       max-idle: 8
       min-idle: 1
       max-wait: 2000
   data:
     mongodb:
-      uri: mongodb://test:123456@192.168.1.112:27017/tnaot
-  rabbitmq:
-    host: 192.168.1.112
-    port: 5672
-    username: rabbit
-    password: 123456
-    publisher-confirms: true
-    virtual-host: /
+      uri: mongodb://test:123456@192.168.1.112:27017/marketing
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
@@ -61,4 +74,4 @@ pagehelper:
   helperDialect: mysql
   reasonable: false
   supportMethodsArguments: true
-  params: count=countSq
+  params: count=countSql
