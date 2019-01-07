@@ -120,3 +120,19 @@ zuul:
       path: /search/**
       serviceId: tnaot-search
       stripPrefix: false
+    api-shop:
+      path: /shop/**
+      serviceId: tnaot-shop
+      stripPrefix: false
+    api-mission:
+      path: /mission/**
+      serviceId: tnaot-marketing
+      stripPrefix: false
+    api-mentor:
+      path: /mentor/**
+      serviceId: tnaot-marketing
+      stripPrefix: false
+    api-wallet:
+      path: /wallet/**
+      serviceId: tnaot-marketing
+      stripPrefix: false
