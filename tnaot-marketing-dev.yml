@@ -44,6 +44,16 @@ spring:
   data:
     mongodb:
       uri: mongodb://test:123456@192.168.1.112:27017/marketing
+  rabbitmq:
+    host: 192.168.1.112
+    port: 5672
+    username: rabbit
+    password: 123456
+    publisher-confirms: true
+    virtual-host: /
+    listener: 
+      simple:
+        acknowledge-mode: manual
 eureka:
   client:
     healthcheck:
