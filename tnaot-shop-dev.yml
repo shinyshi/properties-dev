@@ -91,6 +91,7 @@ payconfig:
     rest_api_key: c9aecc2699fcf0135850e81a38d0625576a24c8f595a95f7a73aabe87ded7cab
     biller_code: 5120
     bill_till_rbtn: 0
+    sandbox: 1
   pipay:
     merc-id: 102425
     ccy: USD
