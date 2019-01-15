@@ -85,6 +85,11 @@ payconfig:
     refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
     return-url: http://rest.tnaot.com:8080/shop/notify/payment/front/mpay
     notify-url: http://rest.tnaot.com:8080/shop/notify/payment/mpay
+  wing:
+    return_url: http://rest.tnaot.com:8080/rest/shop/notify/front/wing
+    username: Koh thmey Technology Co.,Ltd
+    rest_api_key: c9aecc2699fcf0135850e81a38d0625576a24c8f595a95f7a73aabe87ded7cab
+    biller_code: 5120
   pipay:
     merc-id: 102425
     ccy: USD
