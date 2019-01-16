@@ -93,6 +93,7 @@ payconfig:
     bill_till_rbtn: 0
     sandbox: 1
     pay_url: https://wingsdk.wingmoney.com:334
+    front_success_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
   pipay:
     merc-id: 102425
     ccy: USD
