@@ -92,6 +92,7 @@ payconfig:
     biller_code: 5120
     bill_till_rbtn: 0
     sandbox: 1
+    pay_url: https://wingsdk.wingmoney.com:334
   pipay:
     merc-id: 102425
     ccy: USD
