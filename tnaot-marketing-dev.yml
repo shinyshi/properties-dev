@@ -1,6 +1,8 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
+  application:
+    name: tnaot-marketing
   mvc:
     favicon:
       enabled: false
