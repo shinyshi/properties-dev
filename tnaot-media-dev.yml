@@ -92,3 +92,5 @@ memcached:
   poolSize: 10
   timeout: 3000
   sanitizeKeys: 10
+path:
+  clean-data-url: http://192.168.1.226:7023/news-content/format
