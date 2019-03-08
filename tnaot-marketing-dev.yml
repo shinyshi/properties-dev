@@ -45,9 +45,9 @@ spring:
     mongodb:
       uri: mongodb://test:123456@192.168.1.112:27017/marketing
   rabbitmq:
-    host: 47.52.144.242
+    host: 192.168.1.112
     port: 5672
-    username: mengxun
+    username: rabbit
     password: 123456
     publisher-confirms: true
     virtual-host: /
