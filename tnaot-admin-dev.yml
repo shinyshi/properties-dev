@@ -226,3 +226,14 @@ recharge:
     public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxitd+4p6Y4I/lFDz6MD+yjB3+rWryc1ygMxYTrB0b5oHf/YaoL9miQ/ToQ6DAhkq6fqTjlMdkLUQmiifz1frnLMIXjoDYyLytJVu6xYAbLmJ+A1NVp0LL/18PxLi8IB8zjpQYIHVHcMRDuiK2PZCJlloqlHyrVydDvSERN14LXQIDAQAB
     client-id: kohthmey
   ip-white-list:  127.0.0.1,0:0:0:0:0:0:0:1,219.135.171.94,47.244.30.161,113.68.108.15,47.75.132.145,183.48.71.101,192.168.226.1,136.228.128.128,192.168.242.1,192.168.111.1
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: http://192.168.1.137:7080/xxl-job-admin
+    executor:
+      appname: tnaot-admin
+      ip:
+      logpath: /home/logs/tnaot/task/jobhandler
+      logretentiondays: 5
+      port: 9098
