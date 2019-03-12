@@ -106,7 +106,7 @@ zuul:
       sensitiveHeaders:
     api-media:  
       path: /media/**
-      serviceId: tnaot-life
+      serviceId: tnaot-news
       stripPrefix: false
     api-news:
       path: /news/**
