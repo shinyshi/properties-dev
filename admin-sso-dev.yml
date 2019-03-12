@@ -1,10 +1,11 @@
 logging:
-  config: classpath:logback-dev.xml
+  config: classpath:log4j2-dev.xml
 spring:
-  application:
-    name: tnaot-media
+  mvc:
+    favicon:
+      enabled: false
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
@@ -35,26 +36,22 @@ spring:
     port: 6379
     password: 123456
     timeout: 0
-    database: 3 #dbindex = 3
     pool:
       max-active: 8 
       max-idle: 8
       min-idle: 1
       max-wait: 2000
-  rabbitmq:
-    host: 192.168.1.112
-    port: 5672
-    username: rabbit
-    password: 123456
-    publisher-confirms: true
-    virtual-host: /
   http:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
+  messages:
+    basename: i18n/messages
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
 pagehelper:
   helperDialect: mysql
   reasonable: false
@@ -68,29 +65,23 @@ feign:
   hystrix:
     enabled: true
 hystrix:
-  command:
+  threadpool:
     default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
-management: 
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management:
   security:
     enabled: false
-ftp:
-  host: 47.52.144.242
-  port: 21
-  username: ftpuser
-  password: ftpuser20180608
-  basePath: /
-  fileServerPath: http://47.52.144.242:7003
-  imageFolder: image
-  thumbFolder: thumbs
-  videoFolder: video
-memcached:
-  servers: 47.52.144.242:22122
-  poolSize: 10
-  timeout: 3000
-  sanitizeKeys: 10
-path:
-  clean-data-url: http://192.168.1.226:7023/news-content/format
