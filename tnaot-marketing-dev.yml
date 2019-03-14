@@ -95,4 +95,4 @@ ftp:
   fileServerPath: http://192.168.1.136:9999
 tm:
   manager:
-    url: http://127.0.0.1:7000/tx/manager/
+    url: http://127.0.0.1:9999/tx/manager/
