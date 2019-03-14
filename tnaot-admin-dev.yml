@@ -237,3 +237,11 @@ xxl:
       logpath: /home/logs/tnaot/task/jobhandler
       logretentiondays: 5
       port: 9098
+upload:
+  url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
+  keyId: LTAIQ0IV2BcwuDYiYY
+  keySecret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
+  basePath: /compress
+  imageFolder: image
+  zipName: origal.zip
+  jsonDataName : jsonData.txt
