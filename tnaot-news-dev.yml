@@ -10,6 +10,7 @@ spring:
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    removeAbandoned: true
     removeAbandonedTimeout: 1800
     druid:
       aop-patterns: false
