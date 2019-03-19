@@ -5,7 +5,7 @@ spring:
     favicon:
       enabled: false
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useSSL=false
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useSSL=true
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
