@@ -245,3 +245,6 @@ upload:
   imageFolder: image
   zipName: origal.zip
   jsonDataName : jsonData.txt
+path:
+  clean-data-url: http://192.168.1.226:7023/news-content/format
+  update-newstag-url: http://192.168.1.224:7024/news/updateTag
