@@ -1,0 +1,131 @@
+logging:
+  config: classpath:logback-dev.xml
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: dbuser
+    password: asdQWE!@#
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 2
+      min-idle: 2
+      max-active: 20
+      max-wait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 30000
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      validationQuery: select 'x'
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: 0
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 1
+      max-wait: 2000
+  data:
+    mongodb:
+      uri: mongodb://test:123456@192.168.1.112:27017/tnaot
+mybatis:
+  type-aliases-package: com.tnaot.**.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+payconfig:
+  alipay:
+    app-id: 2016092100565701
+    pay-url: https://openapi.alipaydev.com/gateway.do
+    ras-private-key: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCAYkphylrbH9c/i7yHnES2mCtT26h/MFK4Bss3pRL2dRcnrACSxfXtYRsY6c4hHULnOk7G4JRtdAZ6SRcRG3Y822F65XuPoDdTzIjs4GIVAQC1BfxOYD6T5f8uM6LHtLh4hpPCXFs1R279BQGa+4PDVxm8/ley7hdrHSmVXt5J7FmKOxvon6AuwGOBkwjuA3LmnUDCBHHTtubQOkT/eNGgKzf1bihbs5hnt+99uPZlnODojIHE0PY930Eor68jJJIhZUKr5f2Ouwm8fotu7ypUpFdIxXFg/w0ES6gCu0GtcHQDlZJckeg7erLFVVkz3q+ZExw7+KUsx7u+0OJ/17WNAgMBAAECggEAOMjAs44oL4Fe2El7ItQYhFa720Rtu4vpGmJO4hbOU1oo2rA2NLUAeHUZ4iQPuw/RNqrQiyBsJhlKgC3x2Ow3mOVDsXLs+vLXZeYyrer1Fusxn9+84AGrzAjPnGTUW9ZwPUbw9eeZo/ArhBgBxMX4Wp8c0D4DFi4/B26HpPyn/zO8niDTU3bVCfdS1XNEQRC0RMhTlvtsQRFkQ+6DXsM6JpRYaMQw8oaed5VT+Eg57eWduHUyUyPyZ21mn6Vptlk5IGuuMdTZqRFD2kD3QxbFzZ6ADtge/AvmDkW7+11J7WxZPPFUMxvx8V6RxdVFNoimqptSpT70FwUARk+g+c6f9QKBgQDIXJvfRAh5MuDOfBj4i9+rpURsQXEi+aOr83Tx7XD1r+fKvtUgLInQIubUyfSghYODHVSu7ylE18XXnrTVQA5E6GKwANyfdF6UBIyZg8fQaB3O62c8MSbt0eDcST+NUTRQtJL5cc+5sAEAcMDCj5PmkBXu9csFeVRZLOfxOeio0wKBgQCkCOWDqeWUrqowOFq9udrjfobUj7QoxlS2gEwyesbA9bnJfjvlo0H40qc6o/lyTZQ1LUjF8kaTlImJf/t1E7tZpt4KS7MdR7h8OQmS2vcWe5gH46Hk7KDcqtrUnfY0TjC4wyYXDdqS9y4tQw7p7MqewZhIdiDS7tnUD7dVSV0sHwKBgQCTDYVJZEFj0re0VNhu8xoCfJWvboh+xwIdXd3jAgX6DFTvNQhvSMENBdCtNFxaxCM1w/03N0juwf7utgi6yvyuDnEABGHolhwkPwKCWXn5t7DJAXUPdHPB8Fw80XXXXlYrNZz5f1KaUlcp35daNM60VeQDMlsDdX02xgKlxX7BCQKBgQCGiaV1L8vU/s0nb5E9O0qEfCop/RNOvhyM8v2MCZcqfGA9GwQVfKmHY381YXgef/KnCtU9RVENii6kUAv2IpDvHyXOW/g0c7akbEOl52HxVr2C+vi1wj7NvnRtHoHotJjRcX20OvCiyYleJjn9MvGc9DvqcrjJSI3wmFNN6DY7EQKBgQC8cnDwL+wMnUtFDUPNpHBABu7ZG9qWGqtK8LhPCv5Y9XPOqoTE0r9fs+m+CZvSiVq/5rsvpJcXZXH+5ey+eeoLU//NFMku6RJ+Umuc5xlOU6zmnpZxvsIkZdjWF1aRLcNlU+osns0f16UKtQlh3fUaZw3cLzSVn7Tszmn5eXQujw==
+    notify-url: http://rest.tnaot.com:8080/shop/notify/payment/alipay
+    timeout-express: 30
+    seller-id: 2088102176679768
+  tenpay:
+    app-id: wxd4d3c645268d1b14
+    app-secret: 746a6d3ca6f6499055effad514cd7538
+    app-mch-id: 1515844081
+    api-key: 1af3ecc644f4478aabaeb386fdedaa2b
+    notify-url: http://rest.tnaot.com:8080/shop/notify/payment/tenpay
+  huione:
+    app-id: 7e6b35bcdb0d2337
+    pay-url: https://open.huione.com?_c=gateway&_a=orderPay
+    notify-url: http://rest.tnaot.com:8080/shop/notify/order/huione
+    ras-private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAL4EI0GLhxrsrS5aY78NziMi8tLnwVHubqif0sn/GXuTnUjtLFdkOVF2ZB4USxQIVzIza73K3EWr/yoO037uqJ7n6yAGo4QgV0GdJ8yOLAPDHe9XLsvMd3xTwJbryzdKtw2IIo0565CSzCJ/60E3coDwQRXqDHIQB9I4Oo4TnoIJAgMBAAECgYEAlDmAExo3ey5S7cy+8INhYRFbIGB+8l2vXsTF1qKziy2cTQ4OP+HDwKM8+CXWZzsWYeewzS2Y5JSGCJXmL6cWSv6jlvB50DBF3wVAejnwk0dERLuHfp1ZGvMX8r7Vrtzp1kyzqs9xC1k/rNwAJZXcd10AXtWytY4FEKPSVHW+4c0CQQDm41USo5vYURC0+mPjIr/ThBmCHwBqPh5tv+qzkfC1k6vFkh/VD4rXU/TpcjeKm8+0kOQuEOU+xFgpZPdNQ5ATAkEA0q7NEivXEKVGGSN2JXOHcsFjyCGQwuVYDHS6YxN3IfJMB5aQYYzauJ1y1qtYdB46kT5GFaZV7R4MFUd4BKhA8wJBAJ+bVxvjbcBDicERtis1wlV9ZATHWYoYFwDXQm+P204qHvwc31RxwhDIQO1/v1VaEGNKJfKSS2bwY+F5olsO8XECQElzJ4tuPUxQUl/xPP9Rh6c6RM9A5HcN/eRZzaE86AutrVP36d4YfShfu+mbUvsojsKUM1rY4pwIHa5NfEojXoECQGovut1b1fBYrfcqV9qnIJL721WvqkPl3lPT8ro4NIrXvHqgULkeKL5ZSfyQIafQD1RzhNzAXn71mJZreAWWCqA=
+    alipay-public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC17MRjnkkE+m0voroRGzcFlhaIrr6nS0zOB9Uzl/+00p0rjYpLLufPfAdbwAhmPPUdwKjTUOF4ZrWjtIcUcynZH/1lKPk5paNtNgKP3n/SupnExeimKrNmnJ9jFFPwg8n+HANGCyaFqy8TKEtM4PoVSIQgEsKNkwysgvYqmCCbpwIDAQAB
+  mpay:
+    merc-id: 8888880001533693
+    pay-type: MPay
+    ccy: USD
+    sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
+    pay-order-url: https://business.bestmpay.com/upg/v2/createWebOrder
+    pay-order-url-h5: https://business.bestmpay.com/upg/v2/createWapOrder
+    query-order-url: https://business.bestmpay.com/upg/v2/queryOrder
+    refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
+    return-url: http://rest.tnaot.com:8080/shop/notify/payment/front/mpay
+    notify-url: http://rest.tnaot.com:8080/shop/notify/payment/mpay
+  wing:
+    return_url: http://rest.tnaot.com:8080/rest/shop/notify/front/wing
+    username: Koh thmey Technology Co.,Ltd
+    rest_api_key: c9aecc2699fcf0135850e81a38d0625576a24c8f595a95f7a73aabe87ded7cab
+    biller_code: 5120
+    bill_till_rbtn: 0
+    sandbox: 1
+    pay_url: https://wingsdk.wingmoney.com:334
+    front_success_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
+  pipay:
+    merc-id: 102425
+    ccy: USD
+    sid: 5531
+    did: 8085
+    pay-order-url: https://onlinepayment-test.pipay.com/starttransaction
+    query-order-url: https://onlinepayment-test.pipay.com/rest-api/verifyTransaction
+    return-url: http://rest.tnaot.com:8080/rest/shop/notify/front/pipay
+    front-fail-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
+    front-success-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management:
+  context-path: /shop
+  security:
+    enabled: false
