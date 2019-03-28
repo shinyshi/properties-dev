@@ -234,3 +234,7 @@ upload:
   imageFolder: image
   zipName: origal.zip
   jsonDataName : jsonData.txt
+push:
+  sms-url: https://u.tnaot.com//generator/url
+  app-url: https://u.tnaot.com//test
+    
