@@ -140,6 +140,13 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
 management: 
   security:
     enabled: false
