@@ -175,3 +175,11 @@ recharge:
 bmb:
    front:
        url: 127.0.0.1:8090/bmb/front/
+withdrawconfig:
+   mpay:
+       merc-id: 8888880001533693
+       ccy: USD
+       sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
+       withdrawUrl: http://103.242.56.40:9001/upg/v2/merchantTransfer
+       withdrawQueryUrl: http://103.242.56.40:9001/upg/v2/queryTransferOrder
+      
