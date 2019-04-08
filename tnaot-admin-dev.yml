@@ -241,4 +241,11 @@ upload:
 push:
   sms-url: https://u.tnaot.com//generator/url
   app-url: https://u.tnaot.com//test
+withdrawconfig:
+   mpay:
+       merc-id: 8888880001533693
+       ccy: USD
+       sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
+       withdrawUrl: http://103.242.56.40:9001/upg/v2/merchantTransfer
+       withdrawQueryUrl: http://103.242.56.40:9001/upg/v2/queryTransferOrder
     
