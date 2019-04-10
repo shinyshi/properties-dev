@@ -247,7 +247,7 @@ upload:
   jsonDataName : jsonData.txt
 push:
   sms-url: https://u.tnaot.com//generator/url
-  sms-update-url: https://u.tnaot.com//udpate/url
+  sms-update-url: https://u.tnaot.com//update/url
   app-url: https://u.tnaot.com//test
 withdrawconfig:
    mpay:
