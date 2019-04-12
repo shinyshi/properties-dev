@@ -256,4 +256,13 @@ withdrawconfig:
        sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
        withdrawUrl: http://103.242.56.40:9001/upg/v2/merchantTransfer
        withdrawQueryUrl: http://103.242.56.40:9001/upg/v2/queryTransferOrder
+path:
+  format-data-url: http://192.168.1.224:7023/news-content/format
+  update-news-tag-url: http://192.168.1.224:7024/news/updateTag
+  get-news-tags-url: http://192.168.1.224:7024/news/getTag
+  list-tag-url: http://219.135.171.94:7024/tag/list
+  get-tag-detail-url: http://219.135.171.94:7024/tag/detail
+  add-tag-url: http://219.135.171.94:7024/tag/add
+  update-tag-url: http://219.135.171.94:7024/tag/update
+  delete-tag-url: http://219.135.171.94:7024/tag/del
     
