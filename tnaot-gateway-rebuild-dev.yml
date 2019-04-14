@@ -16,8 +16,6 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
-  messages:
-    basename: i18n/messages
 eureka:
   client:
     healthcheck:
@@ -46,9 +44,6 @@ ribbon:
 management: 
   security:
     enabled: false
-memcached:
-  host: 47.52.144.242
-  port: 22122
 zuul:  
   okhttp:
     enabled: true
