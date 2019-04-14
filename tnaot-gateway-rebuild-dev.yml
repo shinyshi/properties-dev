@@ -18,16 +18,6 @@ spring:
       max-request-size: 50MB
   messages:
     basename: i18n/messages
-mybatis:
-  type-aliases-package: com.tnaot.**.entity
-  mapper-locations: classpath*:mapper/*/*Mapper.xml
-  configuration:
-    call-setters-on-nulls: true
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
 eureka:
   client:
     healthcheck:
