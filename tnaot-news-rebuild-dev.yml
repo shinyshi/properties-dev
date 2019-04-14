@@ -1,0 +1,105 @@
+logging:
+  config: classpath:logback-dev.xml
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
+    username: dbuser
+    password: asdQWE!@#
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      remove-abandoned: true
+      remove-abandoned-timeout: 1800
+      aop-patterns: false
+      initial-size: 2
+      min-idle: 2
+      max-active: 20
+      max-wait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 30000
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      validationQuery: select 'x'
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: 2000
+    pool:
+      max-active: 8 
+      max-idle: 8
+      min-idle: 1
+      max-wait: 2000
+  data:
+    mongodb:
+      uri: mongodb://test:123456@192.168.1.112:27017/tnaot
+  rabbitmq:
+    host: 192.168.1.112
+    port: 5672
+    username: rabbit
+    password: 123456
+    publisher-confirms: true
+    virtual-host: /
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  messages:
+    basename: i18n/messages
+mybatis:
+  type-aliases-package: com.tnaot.**.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+management: 
+  security:
+    enabled: false
+ftp:
+  host: 192.168.1.136
+  port: 21
+  username: upload
+  password: wenjianshangchuan
+  basePath: /home/upload
+  fileServerPath: http://47.52.144.242:7003
+  imageFolder: image
+  thumbFolder: thumbs
+  videoFolder: video
+path:
+  defaultImage: http://refile.tnaot.com/image/2018/10/24/252a9b16113841d5992cb67a925971c2.jpg
+  ipDistrictUrl: http://192.168.1.136:8074/json/
+tm:
+  manager:
+    url: http://127.0.0.1:8899/tx/manager/
