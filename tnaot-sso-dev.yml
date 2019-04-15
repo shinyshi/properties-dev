@@ -4,22 +4,18 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: true
-  mvc:
-    favicon:
-      enabled: false
+  session: 
+    store-type: redis
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      remove-abandoned: true
-      remove-abandoned-timeout: 1800
-      aop-patterns: false
-      initial-size: 2
-      min-idle: 2
-      max-active: 20
+      initial-size: 5
+      min-idle: 5
+      max-active: 30
       max-wait: 60000
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 30000
@@ -41,15 +37,12 @@ spring:
     host: 192.168.1.112
     port: 6379
     password: 123456
-    timeout: 2000
+    timeout: 5000
     pool:
       max-active: 8 
       max-idle: 8
       min-idle: 1
       max-wait: 2000
-  data:
-    mongodb:
-      uri: mongodb://test:123456@192.168.1.112:27017/tnaot
   rabbitmq:
     host: 192.168.1.112
     port: 5672
@@ -57,10 +50,9 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
-  http:
-    multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
+    listener: 
+      simple:
+        acknowledge-mode: manual
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
@@ -71,6 +63,7 @@ pagehelper:
   reasonable: false
   supportMethodsArguments: true
   params: count=countSql
+  
 eureka:
   client:
     healthcheck:
