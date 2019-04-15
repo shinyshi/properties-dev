@@ -54,6 +54,8 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
+  messages:
+    basename: i18n/messages
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
