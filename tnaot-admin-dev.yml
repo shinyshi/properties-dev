@@ -103,8 +103,8 @@ spring:
     mongodb:
       uri: mongodb://test:123456@192.168.1.112:27017/tnaot
   rabbitmq:
-    host: 192.168.1.112
-    port: 5672
+    host: 192.168.1.136
+    port: 5671
     username: rabbit
     password: 123456
     publisher-confirms: true
