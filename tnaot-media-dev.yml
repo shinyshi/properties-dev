@@ -1,6 +1,9 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
   application:
     name: tnaot-media
   datasource:

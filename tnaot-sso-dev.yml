@@ -4,22 +4,18 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: true
-  mvc:
-    favicon:
-      enabled: false
+  session: 
+    store-type: redis
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&useSSL=false&useAffectedRows=true
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      remove-abandoned: true
-      remove-abandoned-timeout: 1800
-      aop-patterns: false
-      initial-size: 2
-      min-idle: 2
-      max-active: 20
+      initial-size: 5
+      min-idle: 5
+      max-active: 30
       max-wait: 60000
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 30000
@@ -41,15 +37,12 @@ spring:
     host: 192.168.1.112
     port: 6379
     password: 123456
-    timeout: 2000
+    timeout: 5000
     pool:
-      max-active: 8
+      max-active: 8 
       max-idle: 8
       min-idle: 1
       max-wait: 2000
-  data:
-    mongodb:
-      uri: mongodb://test:123456@192.168.1.112:27017/marketing
   rabbitmq:
     host: 192.168.1.112
     port: 5672
@@ -60,12 +53,17 @@ spring:
     listener: 
       simple:
         acknowledge-mode: manual
-        default-requeue-rejected: false #重试次数超过上面的设置之后是否丢弃（false不丢弃时需要写相应代码将该消息加入死信队列）
-        retry: 
-          max-attempts: 5  #最大重试次数
-          enabled: true #是否开启消费者重试（为false时关闭消费者重试，这时消费端代码异常会一直重复收到消息）
-          initial-interval: 5000 #重试间隔时间（单位毫秒）
-
+mybatis:
+  type-aliases-package: com.tnaot.**.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+  
 eureka:
   client:
     healthcheck:
@@ -79,26 +77,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
-ribbon: 
-  ConnectTimeout: 20000
-  ReadTimeout: 20000 
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 1
-  MaxTotalHttpConnections: 10000
-  MaxConnectionsPerHost: 3000
-mybatis:
-  type-aliases-package: com.tnaot.**.entity
-  mapper-locations: classpath*:mapper/*/*Mapper.xml
-  configuration:
-    call-setters-on-nulls: true
-pagehelper:
-  helperDialect: mysql
-  reasonable: false
-  supportMethodsArguments: true
-  params: count=countSql
-ftp:
-  fileServerPath: http://192.168.1.136:9999
+            timeoutInMilliseconds: 10000
 tm:
   manager:
     url: http://127.0.0.1:8899/tx/manager/
