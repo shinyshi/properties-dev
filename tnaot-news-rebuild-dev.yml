@@ -1,7 +1,7 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
-  json:
+  jackson:
     serialization:
       write-dates-as-timestamps: true
   mvc:
