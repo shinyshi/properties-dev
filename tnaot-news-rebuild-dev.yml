@@ -1,6 +1,9 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
+  json:
+    serialization:
+      write-dates-as-timestamps: true
   mvc:
     favicon:
       enabled: false
