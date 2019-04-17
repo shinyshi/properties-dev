@@ -246,7 +246,7 @@ upload:
   keySecret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
   basePath: /compress
   imageFolder: image
-  zipName: origal
+  zipName: origal.zip
   jsonDataName : jsonData.txt
 push:
   sms-url: https://u.tnaot.com//generator/url
