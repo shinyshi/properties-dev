@@ -263,4 +263,8 @@ path:
   add-tag-url: http://219.135.171.94:7024/tag/add
   update-tag-url: http://219.135.171.94:7024/tag/update
   delete-tag-url: http://219.135.171.94:7024/tag/del
+dotnet-redis:
+  url: 47.52.144.242
+  port: 6379
+  pwd: mongcentredis
     
