@@ -8,7 +8,7 @@ spring:
     content-type: text/html
     enabled: true
     suffix: .ftl
-    template-loader-path: classpath:/template
+    template-loader-path: classpath:/templates
   jackson:
     serialization:
       write-dates-as-timestamps: true
