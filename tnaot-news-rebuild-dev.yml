@@ -9,7 +9,6 @@ spring:
     enabled: true
     suffix: .ftl
     template-loader-path:
-    - file:./templates/
     - classpath:/templates/
   jackson:
     serialization:
