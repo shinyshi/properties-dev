@@ -1,6 +1,14 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    suffix: .ftl
+    template-loader-path: classpath:/ftl
   jackson:
     serialization:
       write-dates-as-timestamps: true
@@ -115,3 +123,4 @@ fdfs:
     height: 150
   tracker-list:            #TrackerList参数,支持多个
     - 120.78.77.65:22122
+    
