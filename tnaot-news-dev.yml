@@ -110,6 +110,7 @@ tm:
 fdfs:
   so-timeout: 1501 #socket连接超时时长
   connect-timeout: 2000 #连接tracker服务器超时时长
+  file-server-path: http://120.78.77.65:8888
   thumb-image:             #缩略图生成参数
     width: 150
     height: 150
