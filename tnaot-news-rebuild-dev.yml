@@ -124,4 +124,14 @@ fdfs:
     height: 150
   tracker-list:            #TrackerList参数,支持多个
     - 120.78.77.65:22122
+big-data:
+  path: 
+  # 推荐资讯接口地址
+    recommentNewsApi: http://219.135.171.94:7025/news/channel
+  # 推荐搜索关键词接口地址
+    recommentKeywordApi: http://219.135.171.94:7025/word/searchword
+  # 相关资讯接口地址
+    recommentRelateNewsApi: http://219.135.171.94:7025/news/relevant
+  # 资讯内容去重格式化(用于爬虫添加/修改接口)
+    newsContentReformatApi: http://219.135.171.94:7024/news-content/format
     
