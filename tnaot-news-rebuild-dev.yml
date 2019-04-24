@@ -136,3 +136,42 @@ big-data:
   # 资讯内容去重格式化(用于爬虫添加/修改接口)
     news-content-reformat-api: http://219.135.171.94:7024/news-content/format
     
+app:
+  config:
+    token:
+      crawlerAddOrModifyNewsToken: cd85279322a1fd81a2caeb7a7b4285ac
+    mock:
+      # 是否启用模拟推荐
+      virtualRecommentActive: false
+      # 美国IP是否模拟资讯
+      americaVirtualRecomment: false
+      # IOS是否启用模拟推荐资讯，主要针对IOS上架时使用
+      iosIsVirtualRecomment: false
+      # 安卓是否启用模拟推荐资讯，主要针对安卓上架时使用
+      androidIsVirtualRecomment: false
+      # 模拟推荐资讯ID,中文资讯-
+      recommentNewsIdsZH: 34666,34667,34668,34669,34670,34671,34672,34673,34674,34675,34676,34677,34678,34679,34680,34681,34682,34683,34684,34685,34686,34687,34688,34689,34690,34691
+      # 模拟推荐视频ID,中文资讯
+      recommentVideoIdsZH: 34714,34820,34909,35181,35182,35404,35579,35608,35708,35995,36052,36109,36111,36124,36153,36184,36416,36418,36431,36437,36442,36445,36498,36520,36536,36577,36675,36676,36714,36731,36789,36889,36934
+      # 模拟推荐资讯ID,柬文资讯
+      recommentNewsIdsKH: 34550,34552,34553,34554,34558,34560,34562,34564,34565,34566,34572,34574,34577,34579,34582,34584,3458,34586,34587,34588,34589,34590,34592,34593,34594,34595,34596,34597,34599,34601,34602,34605,34606,3460,34608,34609,34610,34612,34613,34614
+      # 模拟推荐视频ID,柬文资讯
+      recommentVideoIdsKH: 104751,104752,104753,104754,104755,104756,104757,104758,104759,104761,104762,104763,104768,104769,104770,104771,107015,107082,107083,107084,107086
+    onlineVersion:
+      # IOS当前正在上架审核的版本号
+      iosCurrentUpdatingVersion: 1.0.0
+      # 安卓当前正在上架审核的版本号
+      androidCurrentUpdatingVersion: 1.2.3
+    channel:
+      root-channel:
+        # 柬埔寨语根频道
+        language-km-KH: 83
+        # 柬埔寨中文根频道
+        language-zh-Hans: 82
+        # 英文根频道
+        language-en-Us: 83
+      # 小说频道ID,包括中柬文
+      novelChannelId: 88,51
+      # 图片频道ID,包括中柬文
+      galleryChannelId: 104,122
+      filterChannelId: 85,104
