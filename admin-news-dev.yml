@@ -266,3 +266,14 @@ path:
   add-tag-url: http://219.135.171.94:7024/tag/add
   update-tag-url: http://219.135.171.94:7024/tag/update
   delete-tag-url: http://219.135.171.94:7024/tag/del
+big-data:
+  path: 
+    token: cd85279322a1fd81a2caeb7a7b4285ac
+  # 推荐资讯接口地址
+    recomment-news-api: http://219.135.171.94:7025/news/channel
+  # 推荐搜索关键词接口地址
+    recomment-keyword-api: http://219.135.171.94:7025/word/searchword
+  # 相关资讯接口地址
+    recomment-relate-news-api: http://219.135.171.94:7025/news/relevant
+  # 资讯内容去重格式化(用于爬虫添加/修改接口)
+    news-content-reformat-api: http://219.135.171.94:7024/news-content/format
