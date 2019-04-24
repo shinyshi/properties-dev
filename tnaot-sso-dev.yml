@@ -78,6 +78,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
-tm:
-  manager:
-    url: http://127.0.0.1:8899/tx/manager/
+oss:
+  config:
+    key-id: LTAIQ0IV2BcwuDYiYY
+    key-secret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
+    url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
+    url-compress: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLoginWithoutCompress
