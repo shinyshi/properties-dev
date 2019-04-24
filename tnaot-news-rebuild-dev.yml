@@ -126,6 +126,7 @@ fdfs:
     - 120.78.77.65:22122
 big-data:
   path: 
+    token: cd85279322a1fd81a2caeb7a7b4285ac
   # 推荐资讯接口地址
     recomment-news-api: http://219.135.171.94:7025/news/channel
   # 推荐搜索关键词接口地址
