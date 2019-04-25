@@ -111,6 +111,8 @@ push:
     ios-master-secret: 6b56e7e47d8d84fd4c0a52b1
     is-pro: false
   huawei:
+    token-url: https://login.cloud.huawei.com/oauth2/v2/token
+    push-url: https://api.push.hicloud.com/pushsend.do
     app-id: 100503013
     app-secret: 1d9f5e4151900bec1644bb88facb5cdb
     package-name: com.tnaot.news
