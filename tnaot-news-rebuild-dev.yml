@@ -1,15 +1,6 @@
 logging:
-  config: classpath:logback-dev.xml
+  config: classpath:logback-test.xml
 spring:
-  freemarker:
-    cache: false
-    charset: UTF-8
-    check-template-location: true
-    content-type: text/html
-    enabled: true
-    suffix: .ftl
-    template-loader-path:
-    - classpath:/templates/
   jackson:
     serialization:
       write-dates-as-timestamps: true
@@ -17,15 +8,12 @@ spring:
     favicon:
       enabled: false
   datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
+    url: jdbc:mysql://47.52.144.242:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
     username: dbuser
     password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      remove-abandoned: true
-      remove-abandoned-timeout: 1800
-      aop-patterns: false
       initial-size: 2
       min-idle: 2
       max-active: 20
@@ -47,8 +35,8 @@ spring:
         login-username: druid
         login-password: druid
   redis:
-    host: 192.168.1.112
-    port: 6379
+    host: 192.168.1.136
+    port: 6380
     password: 123456
     timeout: 2000
     pool:
@@ -56,16 +44,19 @@ spring:
       max-idle: 8
       min-idle: 1
       max-wait: 2000
-  data:
-    mongodb:
-      uri: mongodb://test:123456@192.168.1.112:27017/tnaot
   rabbitmq:
-    host: 192.168.1.112
-    port: 5672
+    host: 192.168.1.136
+    port: 5671
     username: rabbit
     password: 123456
     publisher-confirms: true
     virtual-host: /
+    listener: 
+      simple:
+        acknowledge-mode: manual
+  data:
+    mongodb:
+      uri: mongodb://admin:123456@192.168.1.136:27018/admin
   http:
     multipart:
       max-file-size: 50MB
@@ -90,21 +81,33 @@ feign:
   hystrix:
     enabled: true
 hystrix:
-  command:
+  threadpool:
     default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
-management: 
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management:
+  context-path: /news
   security:
     enabled: false
 ftp:
-  host: 192.168.1.136
+  host: 47.91.221.83
   port: 21
-  username: upload
-  password: wenjianshangchuan
-  basePath: /home/upload
+  username: ftpuser
+  password: ftpuser20180620
+  basePath: /
   fileServerPath: http://47.52.144.242:7003
   imageFolder: image
   thumbFolder: thumbs
@@ -112,18 +115,15 @@ ftp:
 path:
   defaultImage: http://refile.tnaot.com/image/2018/10/24/252a9b16113841d5992cb67a925971c2.jpg
   ipDistrictUrl: http://192.168.1.136:8074/json/
-tm:
-  manager:
-    url: http://127.0.0.1:8899/tx/manager/
 fdfs:
   so-timeout: 1501 #socket连接超时时长
   connect-timeout: 2000 #连接tracker服务器超时时长
-  file-server-path: http://120.78.77.65:8888
+  file-server-path: http://47.52.150.234:8888
   thumb-image:             #缩略图生成参数
     width: 150
     height: 150
   tracker-list:            #TrackerList参数,支持多个
-    - 120.78.77.65:22122
+    - 47.52.150.234:22122
 big-data:
   path: 
     token: cd85279322a1fd81a2caeb7a7b4285ac
@@ -136,42 +136,3 @@ big-data:
   # 资讯内容去重格式化(用于爬虫添加/修改接口)
     news-content-reformat-api: http://219.135.171.94:7024/news-content/format
     
-app:
-  config:
-    token:
-      crawlerAddOrModifyNewsToken: cd85279322a1fd81a2caeb7a7b4285ac
-    mock:
-      # 是否启用模拟推荐
-      virtualRecommentActive: false
-      # 美国IP是否模拟资讯
-      americaVirtualRecomment: false
-      # IOS是否启用模拟推荐资讯，主要针对IOS上架时使用
-      iosIsVirtualRecomment: false
-      # 安卓是否启用模拟推荐资讯，主要针对安卓上架时使用
-      androidIsVirtualRecomment: false
-      # 模拟推荐资讯ID,中文资讯-
-      recommentNewsIdsZH: 34666,34667,34668,34669,34670,34671,34672,34673,34674,34675,34676,34677,34678,34679,34680,34681,34682,34683,34684,34685,34686,34687,34688,34689,34690,34691
-      # 模拟推荐视频ID,中文资讯
-      recommentVideoIdsZH: 34714,34820,34909,35181,35182,35404,35579,35608,35708,35995,36052,36109,36111,36124,36153,36184,36416,36418,36431,36437,36442,36445,36498,36520,36536,36577,36675,36676,36714,36731,36789,36889,36934
-      # 模拟推荐资讯ID,柬文资讯
-      recommentNewsIdsKH: 34550,34552,34553,34554,34558,34560,34562,34564,34565,34566,34572,34574,34577,34579,34582,34584,3458,34586,34587,34588,34589,34590,34592,34593,34594,34595,34596,34597,34599,34601,34602,34605,34606,3460,34608,34609,34610,34612,34613,34614
-      # 模拟推荐视频ID,柬文资讯
-      recommentVideoIdsKH: 104751,104752,104753,104754,104755,104756,104757,104758,104759,104761,104762,104763,104768,104769,104770,104771,107015,107082,107083,107084,107086
-    onlineVersion:
-      # IOS当前正在上架审核的版本号
-      iosCurrentUpdatingVersion: 1.0.0
-      # 安卓当前正在上架审核的版本号
-      androidCurrentUpdatingVersion: 1.2.3
-    channel:
-      root-channel:
-        # 柬埔寨语根频道
-        language-km-KH: 83
-        # 柬埔寨中文根频道
-        language-zh-Hans: 82
-        # 英文根频道
-        language-en-Us: 83
-      # 小说频道ID,包括中柬文
-      novelChannelId: 88,51
-      # 图片频道ID,包括中柬文
-      galleryChannelId: 104,122
-      filterChannelId: 85,104
