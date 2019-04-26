@@ -151,15 +151,3 @@ seaweedfs:
       port: 9333
       timeout: 50000
       maxConnection: 100
-logging:
-    level:
-       org:
-          apache:
-            http:
-              impl:
-                conn: ERROR
-       net:
-          anumbrella:
-             seaweedfs:
-               core:
-                Connection: ERROR
