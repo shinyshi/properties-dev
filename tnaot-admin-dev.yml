@@ -263,6 +263,7 @@ path:
   add-tag-url: http://219.135.171.94:7024/tag/add
   update-tag-url: http://219.135.171.94:7024/tag/update
   delete-tag-url: http://219.135.171.94:7024/tag/del
+  statistics-members-url: http://192.168.1.57:8088/v1/operator/statistics/members
 dotnet-redis:
   url: 47.52.144.242
   port: 6379
