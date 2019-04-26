@@ -1,5 +1,16 @@
 logging:
   config: classpath:logback-dev.xml
+  level:
+    org:
+      apache:
+        http:
+          impl:
+            conn: ERROR
+    net:
+      anumbrella:
+        seaweedfs:
+          core:
+            Connection: ERROR
 spring:
   freemarker:
     cache: false
