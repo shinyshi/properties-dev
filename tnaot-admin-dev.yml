@@ -254,6 +254,17 @@ withdrawconfig:
        sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
        withdrawUrl: http://103.242.56.40:9001/upg/v2/merchantTransfer
        withdrawQueryUrl: http://103.242.56.40:9001/upg/v2/queryTransferOrder
+   wing:
+      user-name: thirdParty
+      password: ba0228f6e48ba7942d79e2b44e6072ee
+      client-id: third_party
+      clientSecret: 16681c9ff419d8ecc7cfe479eb02a7a
+      grant-type: password
+      token-url: https://ir.wingmoney.com:9443/RestEngine/oauth/token
+      withdraw-query-url: https://ir.wingmoney.com:9443/RestEngine/api/v1/sendmoney/wing/txn_inquiry
+      withdraw-url: https://ir.wingmoney.com:9443/RestEngine/api/v1/sendmoney/wing/commit
+      user-info-url: https://ir.wingmoney.com:9443/RestEngine/api/v1/user/info
+      key: HG58YZ3CR9
 path:
   format-data-url: http://192.168.1.224:7023/news-content/format
   update-news-tag-url: http://192.168.1.224:7024/news/updateTag
