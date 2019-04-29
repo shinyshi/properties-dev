@@ -28,9 +28,9 @@ spring:
     favicon:
       enabled: false
   datasource:
-    url: jdbc:mysql://47.244.46.199:3312/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&useSSL=false&useAffectedRows=true
-    username: root
-    password: WLBNLk6XgY!@#
+    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true
+    username: dbuser
+    password: asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -147,7 +147,7 @@ big-data:
   # 资讯内容去重格式化(用于爬虫添加/修改接口)
     news-content-reformat-api: http://219.135.171.94:7024/news-content/format
 seaweedfs:
-  host: 47.52.150.234
-  port: 7090
+  host: 192.168.1.137
+  port: 9333
   timeout: 50000
-  maxConnection: 100  
+  maxConnection: 100
