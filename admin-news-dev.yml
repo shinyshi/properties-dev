@@ -93,12 +93,13 @@ spring:
     host: 192.168.1.112
     port: 6379
     password: 123456
-    timeout: 2000
-    pool:
-      max-active: 8 
-      max-idle: 8
-      min-idle: 1
-      max-wait: 2000
+    timeout: PT2S
+    jedis:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
   rabbitmq:
     host: 192.168.1.112
     port: 5672
