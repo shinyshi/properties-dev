@@ -26,61 +26,6 @@ eureka:
 feign:
   hystrix:
     enabled: true
-hystrix:
-  threadpool:
-    default:
-      coreSize: 50
-      maximumSize: 10000
-      allowMaximumSizeToDivergeFromCoreSize: true
-      maxQueueSize: -1
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-ribbon: 
-  ConnectTimeout: 20000
-  ReadTimeout: 20000 
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 1
-  MaxTotalHttpConnections: 10000
-  MaxConnectionsPerHost: 3000
 management: 
   security:
     enabled: false
-zuul:  
-  okhttp:
-    enabled: true
-  ribbon-isolation-strategy: THREAD
-  thread-pool:
-    use-separate-thread-pools: true
-    thread-pool-key-prefix: zuulgw
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-    max-total-connections: 10000
-    max-per-route-connections: 5 
-  routes:  
-    api-home:
-      path: /home/**
-      serviceId: tnaot-sso
-      stripPrefix: false
-    api-media:  
-      path: /media/**
-      serviceId: tnaot-news-rebuild
-      stripPrefix: false
-    api-news:
-      path: /news/**
-      serviceId: tnaot-news-rebuild
-      stripPrefix: false
-    api-article:
-      path: /article/**
-      serviceId: tnaot-news-rebuild
-      stripPrefix: false
-    api-action:
-      path: /action/**
-      serviceId: tnaot-news-rebuild
-      stripPrefix: false
-    api-common:
-      path: /common/**
-      serviceId: tnaot-news-rebuild
-      stripPrefix: false
