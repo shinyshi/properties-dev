@@ -37,12 +37,13 @@ spring:
     host: 192.168.1.112
     port: 6379
     password: 123456
-    timeout: 5000
-    pool:
-      max-active: 8 
-      max-idle: 8
-      min-idle: 1
-      max-wait: 2000
+    timeout: PT2S
+    jedis:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
   rabbitmq:
     host: 192.168.1.112
     port: 5672
@@ -78,6 +79,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
-tm:
-  manager:
-    url: http://127.0.0.1:8899/tx/manager/
+oss:
+  config:
+    key-id: LTAIQ0IV2BcwuDYiYY
+    key-secret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
+    url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
+    url-compress: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLoginWithoutCompress
