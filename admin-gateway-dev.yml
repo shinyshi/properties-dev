@@ -13,7 +13,7 @@ spring:
     password: 123456
     timeout: PT2S
     jedis:
-       pool:
+      pool:
         max-active: 8
         max-idle: 8
         min-idle: 1
