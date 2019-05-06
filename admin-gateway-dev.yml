@@ -98,12 +98,11 @@ zuul:
       path: /system/**
       serviceId: tnaot-admin
       stripPrefix: false
-    api-user:
-      path: /user/**
-      serviceId: tnaot-admin
-      stripPrefix: false
-    api-risk:
-      path: /risk/**
-      serviceId: tnaot-admin
-      stripPrefix: false 
- 
+    api-news:
+      path: /news/**
+      serviceId: admin-news
+      stripPrefix: false  
+    api-configuration:
+      path: /configuration/**
+      serviceId: admin-news
+      stripPrefix: false  
