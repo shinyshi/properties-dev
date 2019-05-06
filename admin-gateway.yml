@@ -1,0 +1,53 @@
+logging:
+  config: classpath:log4j2-dev.xml
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  mvc:
+    favicon:
+      enabled: false
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: PT2S
+    jedis:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  threadpool:
+    default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management:
+  security:
+    enabled: false
