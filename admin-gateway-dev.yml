@@ -11,11 +11,52 @@ spring:
     password: 123456
     timeout: PT2S
     jedis:
-      pool:
+       pool:
         max-active: 8
         max-idle: 8
         min-idle: 1
         max-wait: PT2S
+mybatis:
+  type-aliases-package: com.tnaot.**.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  threadpool:
+    default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management: 
+  security:
+    enabled: false
+memcached:
+  host: 47.52.144.242
+  port: 22122
 zuul:  
   okhttp:
     enabled: true
@@ -24,9 +65,9 @@ zuul:
     use-separate-thread-pools: true
     thread-pool-key-prefix: zuulgw
   host:
-    connect-timeout-millis: 60000
-    socket-timeout-millis: 60000
-    max-total-connections: 60000
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+    max-total-connections: 10000
     max-per-route-connections: 5 
   routes:  
     api-login:
@@ -81,31 +122,3 @@ zuul:
       path: /configuration/**
       serviceId: admin-news
       stripPrefix: false  
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  threadpool:
-    default:
-      coreSize: 50
-      maximumSize: 10000
-      allowMaximumSizeToDivergeFromCoreSize: true
-      maxQueueSize: -1
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-ribbon: 
-  ConnectTimeout: 20000
-  ReadTimeout: 20000 
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 1
-  MaxTotalHttpConnections: 10000
-  MaxConnectionsPerHost: 3000
-management:
-  security:
-    enabled: false
