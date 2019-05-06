@@ -18,6 +18,68 @@ spring:
         max-idle: 8
         min-idle: 1
         max-wait: PT2S
+  cloud:
+    gateway:
+      routes:
+      - id: admin
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/admin/**
+        
+      - id: shop #模块-shop
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/shop/**
+        
+      - id: marketing #模块-marketing
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/marketing/**
+        
+      - id: media #模块-media
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/media/**
+        
+      - id: life #模块-life
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/life/**
+        
+      - id: member #模块-member
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/member/**
+        
+      - id: system #模块-system
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/system/**
+        
+      - id: user #模块-user
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/user/**
+        
+      - id: risk #模块-risk
+        uri: lb://tnaot-admin
+        predicates:
+        - Path=/risk/**
+        
+      - id: news #模块-news
+        uri: lb://admin-news
+        predicates:
+        - Path=/news/**
+        
+      - id: configuration #模块-configuration
+        uri: lb://admin-news
+        predicates:
+        - Path=/configuration/**
+        
+      discovery:
+        locator:
+          lower-case-service-id: true
+        
 pagehelper:
   helperDialect: mysql
   reasonable: false
