@@ -78,20 +78,12 @@ zuul:
       path: /shop/**
       serviceId: tnaot-admin
       stripPrefix: false
-    api-marketing:  
-      path: /marketing/**
+    api-system:
+      path: /system/**
       serviceId: tnaot-admin
       stripPrefix: false
-    api-media:  
-      path: /media/**
-      serviceId: tnaot-admin
-      stripPrefix: false
-    api-life:
-      path: /life/**
-      serviceId: tnaot-admin
-      stripPrefix: false
-    api-member:
-      path: /member/**
+    api-user:
+      path: /user/**
       serviceId: tnaot-admin
       stripPrefix: false
     api-risk:
