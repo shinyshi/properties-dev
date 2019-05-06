@@ -94,10 +94,14 @@ zuul:
       path: /member/**
       serviceId: tnaot-admin
       stripPrefix: false
-    api-system:
-      path: /system/**
+    api-user:
+      path: /user/**
       serviceId: tnaot-admin
       stripPrefix: false
+    api-risk:
+      path: /risk/**
+      serviceId: tnaot-admin
+      stripPrefix: false 
     api-news:
       path: /news/**
       serviceId: admin-news
