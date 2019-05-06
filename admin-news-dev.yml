@@ -278,3 +278,9 @@ big-data:
     add-tag-url: http://219.135.171.94:7024/tag/add
     update-tag-url: http://219.135.171.94:7024/tag/update
     delete-tag-url: http://219.135.171.94:7024/tag/del
+oss:
+  config:
+    key-id: LTAIQ0IV2BcwuDYiYY
+    key-secret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
+    url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
+    url-compress: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLoginWithoutCompress
