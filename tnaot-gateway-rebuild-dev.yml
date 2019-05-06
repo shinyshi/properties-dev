@@ -1,9 +1,4 @@
-logging:
-  config: classpath:log4j2-dev.xml
 spring:
-  jackson:
-    serialization:
-      write-dates-as-timestamps: true
   mvc:
     favicon:
       enabled: false
