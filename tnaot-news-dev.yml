@@ -11,10 +11,7 @@ logging:
         seaweedfs:
           core:
             Connection: ERROR
-    com:
-      tnaot:
-        member:
-          mapper:DEBUG
+  
 
 spring:
   freemarker:
