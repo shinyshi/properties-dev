@@ -32,14 +32,14 @@ payconfig:
     ras-private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALyl/B0RVu6HJq/M7tJurnnAG38d2HQD/AUjhC5nTj5bsxT6VjzTEvzeTe7c2bPfK9/2IkOK7XjOFwE6JyEXxM1N1kPo2q4xh5rukhtlBSAijx2RebHsRtq6DI+vJgY5BBC0ZcuwR91B9gbVBfbj9isu6q2CgftkHbYFR/Fo8aQrAgMBAAECgYEAoZflD9ksiAIJJ4n6AROCLRRb+VVNdoN7O8OilEU1hsDx88REXrHHkAe05ikT6rn+UUf7LbQxmsuedRSlM/myP1mgcixhtAgIiZdnrXw3qZKqYW4NODHl5nwYWsQXV1paooeMqRO5X2KBAOgvhHkSF63UGDkOGkvo7Suzq24Rl2ECQQDoLCNDr5SvoeiTApXAPt7NXI7eiss+kwbIietjIdhm75it/tz8eb2Nku0+yuoxRKeoYvav9G9CMEcZ3xrKUW/5AkEA0AJXPGvckPPRF/a0u4+gBOSKjmveEFRvozCU76mwaFtGhMvIYslppOYgREOL+rk+k2ZoAgzl8zK78DZOaG2GQwJAbdws16NmpPDlH2MyvyRAw0YP6KgeYj6qEAyLEH58asDnKzYVFXb5xdsHXhYgWS3Wc6xYdIwidVxo2IokoCWG6QJAJhfnpfcS47DjIAJcQuUgpwS7oy1583+jGj2xaNqopdPhbDxtrDm6kSpbymScZAQ8w33DmmyGSC2IYYtwfItiRQJBALCmhfZ73O6wb9+SgWP3wQe/KLMXQftlFQyY69iEQbMfvhZ7V7SXK+M/tFHRWXaswkVZ7LMjMMNDHMMYcuHMwcA=
     alipay-public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIF5gfNdMLSWdL7Bnga5zQbiH1G+Gum6N0lNiGvfEgTYeiZUdbWX6qgIErXqJWC65mriu8ZPBJO+GWUbqeNMszrCv7XgkL8sS40S+mSEmY7Fii6KGaWJTGl970C3FK6WZmv0Gez8Iqjt1LcRzrum0N1xzoJfoVZ1Z+E8LjChO0pQIDAQAB
   mpay:
-    merc-id: 8888880001571665
+    merc-id: 8888880001533693
     pay-type: Mpay
     ccy: USD
-    sign-key: zvyDjCFeAgjjCzZmPbnzAofwXEpJYlwi
-    pay-order-url: https://business.bestmpay.com/upg/v2/createWebOrder
-    pay-order-url-h5: https://business.bestmpay.com/upg/v2/createWapOrder
-    query-order-url: https://business.bestmpay.com/upg/v2/queryOrder
-    refund-order-url: https://business.bestmpay.com/upg/v2/refundOrder
+    sign-key: YvNYrmKYBYXvSVBAmumyhlfEGiXiDZIN
+    pay-order-url: http://103.242.56.40:9001/upg/v2/merchantTransfer
+    pay-order-url-h5: http://103.242.56.40:9001/upg/v2/createWapOrder
+    query-order-url: http://103.242.56.40:9001/upg/v2/queryOrder
+    refund-order-url: http://103.242.56.40:9001/upg/v2/refundOrder
     return-url: http://rest.tnaot.com:8080/rest/shop/notify/front/mpay
     notify-url: http://rest.tnaot.com:8080/rest/shop/notify/payment/mpay
     front_fail_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
