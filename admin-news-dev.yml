@@ -107,10 +107,10 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
-  http:
+  servlet:
     multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
+      max-file-size: 100Mb
+      max-request-size: 100Mb
   messages:
     basename: i18n/messages
 mybatis:
