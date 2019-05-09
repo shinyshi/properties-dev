@@ -258,15 +258,6 @@ fdfs:
     height: 150
   tracker-list:            #TrackerList参数,支持多个
     - 47.52.150.234:22122
-path:
-  format-data-url: http://192.168.1.224:7023/news-content/format
-  update-news-tag-url: http://192.168.1.224:7024/news/updateTag
-  get-news-tags-url: http://192.168.1.224:7024/news/getTag
-  list-tag-url: http://219.135.171.94:7024/tag/list
-  get-tag-detail-url: http://219.135.171.94:7024/tag/detail
-  add-tag-url: http://219.135.171.94:7024/tag/add
-  update-tag-url: http://219.135.171.94:7024/tag/update
-  delete-tag-url: http://219.135.171.94:7024/tag/del
 big-data:
   path: 
     token: cd85279322a1fd81a2caeb7a7b4285ac
@@ -279,6 +270,14 @@ big-data:
     update-tag-url: http://219.135.171.94:7024/tag/update
     delete-tag-url: http://219.135.171.94:7024/tag/del
     keywords-url: http://47.244.101.194:8789/keywords/
+    get-aicomment-list-url: http://192.168.1.224:7026/review/list
+    update-aicomment-status-url: http://192.168.1.224:7026/review/status
+    delete-aicomment-url: http://192.168.1.224:7026/review/del
+    add-aicomment-url: http://192.168.1.224:7026/review/add
+    get-aicomment-detail-url: http://192.168.1.224:7026/review/detail
+    modify-aicomment-url: http://192.168.1.224:7026/review/update
+    delete-review-tag-url: http://192.168.1.224:7026/review/tagDel
+    update-tag-name-url: http://192.168.1.224:7026/review/updateTagName
 oss:
   config:
     key-id: LTAIQ0IV2BcwuDYiYY
