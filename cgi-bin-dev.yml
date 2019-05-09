@@ -14,10 +14,6 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
-eureka:
-  client:
-    healthcheck:
-      enabled: true
 feign:
   hystrix:
     enabled: true
