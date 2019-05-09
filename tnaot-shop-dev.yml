@@ -65,17 +65,6 @@ pagehelper:
   reasonable: false
   supportMethodsArguments: true
   params: count=countSql
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-feign:
-  hystrix:
-    enabled: true
-  httpclient:
-    enabled: false
-  okhttp:
-    enabled: true
 hystrix:
   command:
     default:
@@ -90,10 +79,6 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   MaxTotalHttpConnections: 10000
   MaxConnectionsPerHost: 3000
-management:
-  context-path: /shop
-  security:
-    enabled: false
 payconfig:  
   alipay:
     app-id: 2018092561526368
