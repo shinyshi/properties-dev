@@ -14,12 +14,12 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
+eureka:
+  client:
+    healthcheck:
+      enabled: true
 feign:
   hystrix:
-    enabled: true
-  httpclient:
-    enabled: false
-  okhttp:
     enabled: true
 hystrix:
   command:
@@ -27,7 +27,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 20000
   ReadTimeout: 20000
@@ -35,7 +35,8 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   MaxTotalHttpConnections: 10000
   MaxConnectionsPerHost: 3000
-management: 
+management:
+  context-path: /shop
   security:
     enabled: false
 payconfig:  
