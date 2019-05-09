@@ -278,6 +278,7 @@ big-data:
     add-tag-url: http://219.135.171.94:7024/tag/add
     update-tag-url: http://219.135.171.94:7024/tag/update
     delete-tag-url: http://219.135.171.94:7024/tag/del
+    keywords-url: http://47.244.101.194:8789/keywords/
 oss:
   config:
     key-id: LTAIQ0IV2BcwuDYiYY
