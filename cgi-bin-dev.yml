@@ -70,4 +70,15 @@ payconfig:
     sandbox: 1
     pay_url: https://wingsdk.wingmoney.com:334
     front_success_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: http://192.168.1.137:7080/xxl-job-admin
+    executor:
+      appname: tnaot-cgibin
+      ip:
+      logpath: /home/logs/tnaot/task/jobhandler
+      logretentiondays: 5
+      port: 9098
       
