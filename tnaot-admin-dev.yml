@@ -265,16 +265,18 @@ withdrawconfig:
       withdraw-url: https://ir.wingmoney.com:9443/RestEngine/api/v1/sendmoney/wing/commit
       user-info-url: https://ir.wingmoney.com:9443/RestEngine/api/v1/user/info
       key: HG58YZ3CR9
-path:
-  format-data-url: http://192.168.1.224:7023/news-content/format
-  update-news-tag-url: http://192.168.1.224:7024/news/updateTag
-  get-news-tags-url: http://192.168.1.224:7024/news/getTag
-  list-tag-url: http://219.135.171.94:7024/tag/list
-  get-tag-detail-url: http://219.135.171.94:7024/tag/detail
-  add-tag-url: http://219.135.171.94:7024/tag/add
-  update-tag-url: http://219.135.171.94:7024/tag/update
-  delete-tag-url: http://219.135.171.94:7024/tag/del
-  statistics-members-url: http://192.168.1.57:8088/v1/operator/statistics/members
+
+big-data:
+  path:
+    format-data-url: http://192.168.1.224:7023/news-content/format
+    update-news-tag-url: http://192.168.1.224:7024/news/updateTag
+    get-news-tags-url: http://192.168.1.224:7024/news/getTag
+    list-tag-url: http://219.135.171.94:7024/tag/list
+    get-tag-detail-url: http://219.135.171.94:7024/tag/detail
+    add-tag-url: http://219.135.171.94:7024/tag/add
+    update-tag-url: http://219.135.171.94:7024/tag/update
+    delete-tag-url: http://219.135.171.94:7024/tag/del
+    statistics-members-url: http://192.168.1.57:8088/v1/operator/statistics/members
 dotnet-redis:
   url: 47.52.144.242
   port: 6379
