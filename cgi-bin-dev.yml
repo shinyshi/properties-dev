@@ -7,6 +7,13 @@ spring:
   mvc:
     favicon:
       enabled: false
+  rabbitmq:
+    host: 192.168.1.112
+    port: 5672
+    username: rabbit
+    password: 123456
+    publisher-confirms: true
+    virtual-host: /
 payconfig:  
   alipay:
     app-id: 2018092561526368
