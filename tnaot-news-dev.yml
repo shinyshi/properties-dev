@@ -161,7 +161,7 @@ big-data:
   # 新闻评论排行榜
     news-review-ranking-list-api: http://192.168.1.57:8088/v1/news/statistics/comment
   # 新闻评论个人排名
-        news-review-personal-ranks-api: http://192.168.1.57:8088/v1/news/statistics/users/{userId}/comment
+    news-review-personal-ranks-api: http://192.168.1.57:8088/v1/news/statistics/users/{userId}/comment
 seaweedfs:
   host: seaweedfs
   port: 9333
