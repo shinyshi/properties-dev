@@ -154,6 +154,14 @@ big-data:
     recomment-relate-news-api: http://219.135.171.94:7025/news/relevant
   # 资讯内容去重格式化(用于爬虫添加/修改接口)
     news-content-reformat-api: http://219.135.171.94:7024/news-content/format
+  # 新闻阅读排行榜
+    news-read-ranks-api: http://192.168.1.57:8088/v1/news/statistics/read
+  # 新闻阅读个人排名
+    news-read-personal-ranks-api: http://192.168.1.57:8088/v1/news/statistics/users/%d/read
+  # 新闻评论排行榜
+    news-review-ranking-list-api: http://192.168.1.57:8088/v1/news/statistics/comment
+  # 新闻评论个人排名
+        news-review-personal-ranks-api: http://192.168.1.57:8088/v1/news/statistics/users/{userId}/comment
 seaweedfs:
   host: seaweedfs
   port: 9333
