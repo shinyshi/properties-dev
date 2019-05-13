@@ -43,10 +43,10 @@ spring:
         max-idle: 8
         min-idle: 1
         max-wait: PT2S
-  http:
+  servlet:
     multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
+      max-file-size: 20Mb
+      max-request-size: 20Mb
   messages:
     basename: i18n/messages
 mybatis:
@@ -103,40 +103,55 @@ zuul:
     max-total-connections: 10000
     max-per-route-connections: 5 
   routes:  
-    api-life: 
-      path: /life/**
-      serviceId: tnaot-life
+    api-login:
+      path: /login
+      serviceId: admin-sso
       stripPrefix: false
-      sensitiveHeaders:
+    api-logout:
+      path: /logout
+      serviceId: admin-sso
+      stripPrefix: false
+    api-admin:
+      path: /admin/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-shop:  
+      path: /shop/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-marketing:  
+      path: /marketing/**
+      serviceId: tnaot-admin
+      stripPrefix: false
     api-media:  
       path: /media/**
-      serviceId: tnaot-news
+      serviceId: tnaot-admin
       stripPrefix: false
+    api-life:
+      path: /life/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-member:
+      path: /member/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-system:
+      path: /system/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-user:
+      path: /user/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-risk:
+      path: /risk/**
+      serviceId: tnaot-admin
+      stripPrefix: false 
     api-news:
       path: /news/**
-      serviceId: tnaot-life
-      stripPrefix: false
-    api-report:
-      path: /report/**
-      serviceId: tnaot-life
-      stripPrefix: false
-    api-search:  
-      path: /search/**
-      serviceId: tnaot-search
-      stripPrefix: false
-    api-shop:
-      path: /shop/**
-      serviceId: tnaot-shop
-      stripPrefix: false
-    api-mission:
-      path: /mission/**
-      serviceId: tnaot-marketing
-      stripPrefix: false
-    api-mentor:
-      path: /mentor/**
-      serviceId: tnaot-marketing
-      stripPrefix: false
-    api-wallet:
-      path: /wallet/**
-      serviceId: tnaot-marketing
-      stripPrefix: false
+      serviceId: admin-news
+      stripPrefix: false  
+    api-configuration:
+      path: /configuration/**
+      serviceId: admin-news
+      stripPrefix: false  

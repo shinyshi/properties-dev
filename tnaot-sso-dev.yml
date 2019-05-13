@@ -54,6 +54,10 @@ spring:
     listener: 
       simple:
         acknowledge-mode: manual
+  servlet:
+    multipart:
+      max-file-size: 20Mb
+      max-request-size: 20Mb
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
