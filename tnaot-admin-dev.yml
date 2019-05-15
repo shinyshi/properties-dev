@@ -163,6 +163,16 @@ ftp:
   imageFolder: image
   thumbFolder: thumbs
   videoFolder: video
+tx-lcn:
+    client:
+        manager-address: 192.168.1.112:8070
+        chain-level: 3
+        dtx-aspect-order: 0
+        resource-order: 0
+    ribbon:
+        loadbalancer:
+          dtx:
+            enabled: true
 payconfig:  
   alipay:
     app-id: 2018092561526368
