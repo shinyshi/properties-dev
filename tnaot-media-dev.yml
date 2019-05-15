@@ -105,3 +105,7 @@ big-data:
     add-tag-url: http://219.135.171.94:7024/tag/add
     update-tag-url: http://219.135.171.94:7024/tag/update
     delete-tag-url: http://219.135.171.94:7024/tag/del
+    media-data-stati-article-url: http://192.168.1.57:8088/v1/media/statistics/users/userId/article
+    media-data-stati-gallery-url: http://192.168.1.57:8088/v1/media/statistics/users/userId/gallery
+    media-data-stati-video-url: http://192.168.1.57:8088/v1/media/statistics/users/userId/video
+    
