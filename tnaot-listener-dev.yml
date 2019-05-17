@@ -122,6 +122,8 @@ push:
     app-id: 3718625
     app-key: 0d0926283eb64c87b631f70858956ea6
     app-secret: 605ee815c7594a28a4dceb04cb8147ec
+    master-secrect: 605ee815c7594a28a4dceb04cb8147ec
+    package-name: com.tnaot.news
   xiaomi:
     app-key: 5461789345824
     app-secret: 5OhyJI8FZLtUgoZBMC6GRA==
