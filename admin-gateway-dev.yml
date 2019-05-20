@@ -1,3 +1,6 @@
+validate:
+  token:
+     open: 0
 spring:
   jackson:
     serialization:
