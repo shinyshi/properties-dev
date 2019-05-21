@@ -200,4 +200,15 @@ recharge:
 bmb:
    front:
        url: 127.0.0.1:8090/bmb/front/
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: http://192.168.1.137:7080/xxl-job-admin
+    executor:
+      appname: tnaot-admin
+      ip:
+      logpath: /home/logs/tnaot/task/jobhandler
+      logretentiondays: 5
+      port: 9098
       
