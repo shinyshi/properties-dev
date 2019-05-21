@@ -114,7 +114,7 @@ jetcache:
         minIdle: ${spring.redis.jedis.pool.min-idle}
         maxIdle: ${spring.redis.jedis.pool.max-idle}
         maxTotal: ${spring.redis.jedis.pool.max-active}
-      host: ${spring.redis.hostname}
+      host: ${spring.redis.host}
       port: ${spring.redis.port}
       password: ${spring.redis.password}
 mybatis:
