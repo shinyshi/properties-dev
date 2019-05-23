@@ -58,6 +58,29 @@ spring:
     multipart:
       max-file-size: 20Mb
       max-request-size: 20Mb
+jetcache:
+  statIntervalMinutes: 15
+  areaInCacheName: false
+  hidePackages: com.tnaot
+  local:
+    default:
+      type: caffeine
+      limit: 100
+      keyConvertor: fastjson
+      expireAfterWriteInMillis: 100000
+  remote:
+    default:
+      type: redis
+      keyConvertor: fastjson
+      valueEncoder: java
+      valueDecoder: java
+      poolConfig:
+        minIdle: ${spring.redis.jedis.pool.min-idle}
+        maxIdle: ${spring.redis.jedis.pool.max-idle}
+        maxTotal: ${spring.redis.jedis.pool.max-active}
+      host: ${spring.redis.host}
+      port: ${spring.redis.port}
+      password: ${spring.redis.password}
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
