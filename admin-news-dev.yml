@@ -267,14 +267,14 @@ fdfs:
 big-data:
   path:
     token: cd85279322a1fd81a2caeb7a7b4285ac
-    format-data-url: http://172.31.0.23:7023/news-content/format
-    update-news-tag-url: http://172.31.0.23:7024/news/updateTag
-    get-news-tags-url: http://172.31.0.23:7024/news/getTag
-    list-tag-url: http://219.135.171.94:7024/tag/list
-    get-tag-detail-url: http://219.135.171.94:7024/tag/detail
-    add-tag-url: http://219.135.171.94:7024/tag/add
-    update-tag-url: http://219.135.171.94:7024/tag/update
-    delete-tag-url: http://219.135.171.94:7024/tag/del
+    format-data-url: http://47.52.150.234:7023/news-content/format
+    update-news-tag-url: http://47.52.150.234:7024/news/updateTag
+    get-news-tags-url: http://47.52.150.234:7024/news/getTag
+    list-tag-url: http://47.52.150.234:7024/tag/list
+    get-tag-detail-url: http://47.52.150.234:7024/tag/detail
+    add-tag-url: http://47.52.150.234:7024/tag/add
+    update-tag-url: http://47.52.150.234:7024/tag/update
+    delete-tag-url: http://47.52.150.234:7024/tag/del
     keywords-url: http://172.31.0.23:8789/keywords/
     get-aicomment-list-url: http://172.31.0.23:7026/review/list
     update-aicomment-status-url: http://172.31.0.23:7026/review/status
