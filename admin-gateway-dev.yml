@@ -106,10 +106,6 @@ zuul:
       path: /push/**
       serviceId: tnaot-admin
       stripPrefix: false 
-    api-report:
-      path: /report/**
-      serviceId: tnaot-admin
-      stripPrefix: false
     api-member:
       path: /member/**
       serviceId: tnaot-admin
@@ -132,5 +128,9 @@ zuul:
       stripPrefix: false
     api-block:
       path: /block/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-report:
+      path: /report/**
       serviceId: admin-news
       stripPrefix: false
