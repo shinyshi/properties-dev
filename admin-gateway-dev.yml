@@ -74,6 +74,10 @@ zuul:
     max-total-connections: 10000
     max-per-route-connections: 5 
   routes:  
+    api-login:
+      path: /login
+      serviceId: tnaot-admin
+      stripPrefix: false
     api-admin:
       path: /admin/**
       serviceId: tnaot-admin
