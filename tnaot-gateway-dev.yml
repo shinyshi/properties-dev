@@ -37,7 +37,7 @@ spring:
     port: 6379
     password: 123456
     timeout: PT2S
-    jedis:
+    lettuce:
        pool:
         max-active: 8
         max-idle: 8
