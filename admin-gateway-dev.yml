@@ -102,6 +102,22 @@ zuul:
       path: /risk/**
       serviceId: tnaot-admin
       stripPrefix: false 
+    api-push:
+      path: /push/**
+      serviceId: tnaot-admin
+      stripPrefix: false 
+    api-report:
+      path: /report/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-member:
+      path: /member/**
+      serviceId: tnaot-admin
+      stripPrefix: false
+    api-user:
+      path: /user/**
+      serviceId: tnaot-admin
+      stripPrefix: false
     api-news:
       path: /news/**
       serviceId: admin-news
@@ -110,83 +126,11 @@ zuul:
       path: /configuration/**
       serviceId: admin-news
       stripPrefix: false  
-    api-news1:
-      path: /news1/**
-      serviceId: admin-news
-      stripPrefix: false 
-    api-news2:
-      path: /news2/**
+    api-promotion:
+      path: /promotion/**
       serviceId: admin-news
       stripPrefix: false
-    api-news3:
-      path: /news3/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news4:
-      path: /news4/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news5:
-      path: /news5/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news6:
-      path: /news6/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news7:
-      path: /news7/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news8:
-      path: /news8/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news9:
-      path: /news9/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news10:
-      path: /news10/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news11:
-      path: /news11/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news12:
-      path: /news12/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news13:
-      path: /news13/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news14:
-      path: /news14/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news15:
-      path: /news15/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news16:
-      path: /news16/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news17:
-      path: /news17/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news18:
-      path: /news18/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news19:
-      path: /news19/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-news20:
-      path: /news20/**
+    api-block:
+      path: /block/**
       serviceId: admin-news
       stripPrefix: false
