@@ -76,7 +76,7 @@ zuul:
   routes:  
     api-login:
       path: /login
-      serviceId: tnaot-admin
+      serviceId: admin-sso
       stripPrefix: false
     api-admin:
       path: /admin/**
