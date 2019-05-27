@@ -150,3 +150,43 @@ zuul:
       path: /news10/**
       serviceId: admin-news
       stripPrefix: false
+    api-news11:
+      path: /news11/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news12:
+      path: /news12/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news13:
+      path: /news13/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news14:
+      path: /news14/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news15:
+      path: /news15/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news16:
+      path: /news16/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news17:
+      path: /news17/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news18:
+      path: /news18/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news19:
+      path: /news19/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news20:
+      path: /news20/**
+      serviceId: admin-news
+      stripPrefix: false
