@@ -1,0 +1,80 @@
+spring:
+  application:
+      name: tnaot-search
+  datasource:
+      druid:
+        url: jdbc:mysql://47.52.144.242:3306/mongcent_news?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+        username: dbuser
+        password: asdQWE!@#
+        initial-size: 2
+        min-idle: 2
+        max-active: 20
+        test-on-borrow: true
+        driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+      solr:
+        host: http://admin:123@192.168.1.136:8983/solr
+      mongodb:
+        uri: mongodb://test:123456@192.168.1.112:27017/tnaot
+  redis:
+      host: 192.168.1.136
+      port: 6380
+      timeout: PT2S
+      lettuce:
+         pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 1
+          max-wait: PT2S
+  rabbitmq:
+      host: 192.168.1.136
+      port: 5672
+      username: rabbit
+      password: 123456
+      publisher-confirms: true
+      virtual-host: /
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  threadpool:
+    default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
+management:
+  context-path: /search
+  security:
+    enabled: false
+memcached:
+  host: 192.168.1.170
+  port: 11211
+message:
+  queue:
+    news: news.queue.java.first
+    life: life.queue.java.first
+rest:
+  path:
+    api:
+      v1: search
+      v2: searchv2
