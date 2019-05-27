@@ -294,6 +294,7 @@ big-data:
     user-approve-report-url: http://47.52.150.234:8088/v1/operator/statistics/approve
     user-release-report-url: http://47.52.150.234:8088/v1/operator/statistics/release
     news-comment-report-url: http://47.52.150.234:8088/v1/operator/statistics/comment
+    statistics-members-url: http://192.168.1.57:8088/v1/operator/statistics/members
 oss:
   config:
     key-id: LTAIQ0IV2BcwuDYiYY
