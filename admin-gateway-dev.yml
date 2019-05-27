@@ -110,3 +110,43 @@ zuul:
       path: /configuration/**
       serviceId: admin-news
       stripPrefix: false  
+    api-news1:
+      path: /news1/**
+      serviceId: admin-news
+      stripPrefix: false 
+    api-news2:
+      path: /news2/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news3:
+      path: /news3/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news4:
+      path: /news4/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news5:
+      path: /news5/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news6:
+      path: /news6/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news7:
+      path: /news7/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news8:
+      path: /news8/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news9:
+      path: /news9/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-news10:
+      path: /news10/**
+      serviceId: admin-news
+      stripPrefix: false
