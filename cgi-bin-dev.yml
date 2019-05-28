@@ -45,7 +45,7 @@ payconfig:
     h5-id: wx3a4fb0286f7945aa
     h5-mch-id: 1515222121
   huione:
-    app-id: 2f73c4cf27abee6e
+    app-id: 44871f0cd8cff622
     pay-url: https://open.huione.com/?_c=gateway&_a=orderPay
     front_fail_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
     front_success_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
