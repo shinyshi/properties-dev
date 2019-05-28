@@ -111,9 +111,9 @@ jetcache:
       valueEncoder: java
       valueDecoder: java
       poolConfig:
-        minIdle: ${spring.redis.jedis.pool.min-idle}
-        maxIdle: ${spring.redis.jedis.pool.max-idle}
-        maxTotal: ${spring.redis.jedis.pool.max-active}
+        minIdle: ${spring.redis.lettuce.pool.min-idle}
+        maxIdle: ${spring.redis.lettuce.pool.max-idle}
+        maxTotal: ${spring.redis.lettuce.pool.max-active}
       host: ${spring.redis.host}
       port: ${spring.redis.port}
       password: ${spring.redis.password}
