@@ -1,6 +1,6 @@
 validate:
   token:
-     open: 0
+     open: 1
      key: zhqyd0ic?gReoBP%9
 spring:
   jackson:
