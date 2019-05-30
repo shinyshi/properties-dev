@@ -1,6 +1,6 @@
 validate:
   token:
-     open: 1
+     open: 0
      key: zhqyd0ic?gReoBP%9
 spring:
   jackson:
@@ -9,33 +9,6 @@ spring:
   mvc:
     favicon:
       enabled: false
-  datasource:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
-    username: dbuser
-    password: asdQWE!@#
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      initial-size: 2
-      min-idle: 2
-      max-active: 20
-      max-wait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 30000
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      validationQuery: select 'x'
-      poolPreparedStatements: true
-      maxPoolPreparedStatementPerConnectionSize: 20
-      filters: stat,wall
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      useGlobalDataSourceStat: true
-      web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-      stat-view-servlet:
-        login-username: druid
-        login-password: druid
   redis:
     host: 192.168.1.112
     port: 6379
@@ -51,18 +24,6 @@ spring:
     multipart:
       max-file-size: 20Mb
       max-request-size: 20Mb
-  messages:
-    basename: i18n/messages
-mybatis:
-  type-aliases-package: com.tnaot.**.entity
-  mapper-locations: classpath*:mapper/*/*Mapper.xml
-  configuration:
-    call-setters-on-nulls: true
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
 eureka:
   client:
     healthcheck:
@@ -73,24 +34,29 @@ feign:
 hystrix:
   threadpool:
     default:
-      coreSize: 50
-      maximumSize: 10000
-      allowMaximumSizeToDivergeFromCoreSize: true
-      maxQueueSize: -1
+      coreSize: 2000
+  command:
+    default:
       execution:
         isolation:
+          strategy: THREAD
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 240001
 ribbon: 
-  ConnectTimeout: 20000
-  ReadTimeout: 20000 
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 1
   MaxTotalHttpConnections: 10000
   MaxConnectionsPerHost: 3000
-management: 
-  security:
-    enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 memcached:
   host: 47.52.144.242
   port: 22122
@@ -102,60 +68,102 @@ zuul:
     use-separate-thread-pools: true
     thread-pool-key-prefix: zuulgw
   host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-    max-total-connections: 10000
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+    max-total-connections: 60000
     max-per-route-connections: 5 
   routes:  
-    api-login:
-      path: /login
-      serviceId: admin-sso
+    api-home:
+      path: /home/**
+      serviceId: tnaot-sso
       stripPrefix: false
-    api-logout:
-      path: /logout
-      serviceId: admin-sso
+     
+    api-bindMobile:  
+      path: /user/bind_mobile
+      serviceId: tnaot-sso
       stripPrefix: false
-    api-admin:
-      path: /admin/**
-      serviceId: tnaot-admin
+    api-updatePwd:  
+      path: /user/update_pwd
+      serviceId: tnaot-sso
       stripPrefix: false
-    api-shop:  
-      path: /shop/**
-      serviceId: tnaot-admin
+    api-uploadHeadImg:  
+      path: /user/update_head_img
+      serviceId: tnaot-sso
       stripPrefix: false
-    api-marketing:  
-      path: /marketing/**
-      serviceId: tnaot-admin
+
+    api-search:  
+      path: /search/**
+      serviceId: tnaot-search
+      stripPrefix: false
+      
+      
+    api-user:  
+      path: /user/**
+      serviceId: tnaot-news
       stripPrefix: false
     api-media:  
       path: /media/**
-      serviceId: tnaot-admin
+      serviceId: tnaot-news
       stripPrefix: false
-    api-life:
+    api-news:
+      path: /news/**
+      serviceId: tnaot-news
+      stripPrefix: false
+    api-article:
+      path: /article/**
+      serviceId: tnaot-news
+      stripPrefix: false
+    api-action:
+      path: /action/**
+      serviceId: tnaot-news
+      stripPrefix: false
+    api-common:
+      path: /common/**
+      serviceId: tnaot-news
+      stripPrefix: false
+    api-channel:
+      path: /channel/**
+      serviceId: tnaot-news
+      stripPrefix: false
+    api-rank:
+      path: /rank/**
+      serviceId: tnaot-news
+      stripPrefix: false
+      
+    api-mission:
+      path: /mission/**
+      serviceId: tnaot-marketing
+      stripPrefix: false
+    api-mentor:
+      path: /mentor/**
+      serviceId: tnaot-marketing
+      stripPrefix: false
+    api-wallet:
+      path: /wallet/**
+      serviceId: tnaot-marketing
+      stripPrefix: false
+      
+    api-life: 
       path: /life/**
-      serviceId: tnaot-admin
+      serviceId: tnaot-life
+      stripPrefix: false
+      sensitiveHeaders:
+    api-report:
+      path: /report/**
+      serviceId: tnaot-life
       stripPrefix: false
     api-member:
       path: /member/**
-      serviceId: tnaot-admin
+      serviceId: tnaot-sso
       stripPrefix: false
-    api-system:
-      path: /system/**
-      serviceId: tnaot-admin
+      
+      
+    api-shop:
+      path: /shop/**
+      serviceId: tnaot-shop
       stripPrefix: false
-    api-user:
-      path: /user/**
-      serviceId: tnaot-admin
+    api-campaign:
+      path: /campaign/**
+      serviceId: tnaot-shop
       stripPrefix: false
-    api-risk:
-      path: /risk/**
-      serviceId: tnaot-admin
-      stripPrefix: false 
-    api-news:
-      path: /news/**
-      serviceId: admin-news
-      stripPrefix: false  
-    api-configuration:
-      path: /configuration/**
-      serviceId: admin-news
-      stripPrefix: false  
+      
