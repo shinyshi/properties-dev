@@ -1,3 +1,7 @@
+validate:
+  token:
+     open: 1
+     key: zhqyd0ic?gReoBP%9
 spring:
   jackson:
     serialization:
