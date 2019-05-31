@@ -61,7 +61,9 @@ management:
 memcached:
   host: 47.52.144.242
   port: 22122
-zuul:  
+zuul:
+  sensitive-headers: Access-Control-Allow-Origin
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
   okhttp:
     enabled: true
   ribbon-isolation-strategy: THREAD
@@ -84,43 +86,43 @@ zuul:
       stripPrefix: false
     api-admin:
       path: /admin/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-shop:  
       path: /shop/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-marketing:  
       path: /marketing/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-media:  
       path: /media/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-life:
       path: /life/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-system:
       path: /system/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-risk:
       path: /risk/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false 
     api-push:
       path: /push/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false 
     api-member:
       path: /member/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-user:
       path: /user/**
-      serviceId: tnaot-admin
+      serviceId: admin-life
       stripPrefix: false
     api-news:
       path: /news/**
