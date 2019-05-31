@@ -58,6 +58,8 @@ spring:
     multipart:
       max-file-size: 20Mb
       max-request-size: 20Mb
+  messages:
+    basename: i18n/messages
 jetcache:
   statIntervalMinutes: 15
   areaInCacheName: false
