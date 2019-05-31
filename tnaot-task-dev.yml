@@ -1,0 +1,81 @@
+logging:
+  config: classpath:logback-dev.xml
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  mvc:
+     favicon:
+       enabled: false
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: PT2S
+    lettuce:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
+  data:
+    mongodb:
+      uri: mongodb://test:123456@192.168.1.112:27017/tnaot
+aicloud:
+  datasource:
+     datasourceName: mongcent_news
+     url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
+     username: dbuser
+     password: asdQWE!@#
+     minIdle: 20
+     maxActive: 20
+  datasources:
+     - datasourceName: mongcent_shop
+       url: jdbc:mysql://192.168.1.170:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
+       username: dbuser
+       password: asdQWE!@#
+       minIdle: 20
+       maxActive: 20
+     - datasourceName: mongcent_marketing
+       url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
+       username: dbuser
+       password: asdQWE!@#
+       minIdle: 20
+       maxActive: 20
+ftp:
+  host: 192.168.1.136
+  port: 21
+  username: upload
+  password: wenjianshangchuan
+  basePath: /home/upload
+  fileServerPath: http://192.168.1.136:9999
+  imageFolder: image
+  thumbFolder: thumbs
+  videoFolder: video
+mybatis:
+  type-aliases-package: com.tnaot.**.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: http://192.168.1.137:7080/xxl-job-admin
+    executor:
+      appname: tnaot-admin
+      ip:
+      logpath: /home/logs/tnaot/task/jobhandler
+      logretentiondays: 5
+      port: 9098
