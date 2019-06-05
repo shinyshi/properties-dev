@@ -157,6 +157,7 @@ ftp:
 path:
   defaultImage: http://refile.tnaot.com/image/2018/10/24/252a9b16113841d5992cb67a925971c2.jpg
   ipDistrictUrl: http://192.168.1.136:8074/json/
+  newsShareLinkUrl: http://task.t.tnaot.com/news_share/
 tm:
   manager:
     url: http://127.0.0.1:8899/tx/manager/
