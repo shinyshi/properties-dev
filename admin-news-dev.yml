@@ -305,3 +305,10 @@ oss:
     key-secret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
     url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
     url-compress: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLoginWithoutCompress
+    
+seaweedfs:
+  host: 47.244.47.227
+  port: 8333
+  timeout: 50000
+  maxConnection: 100
+  file-server-path: http://pre.tnaot.com
