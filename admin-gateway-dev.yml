@@ -98,7 +98,7 @@ zuul:
       stripPrefix: false
     api-media:  
       path: /media/**
-      serviceId: admin-life
+      serviceId: admin-news
       stripPrefix: false
     api-life:
       path: /life/**
