@@ -144,3 +144,11 @@ zuul:
       path: /report/**
       serviceId: admin-news
       stripPrefix: false
+    api-log:
+      path: /log/**
+      serviceId: admin-news
+      stripPrefix: false
+    api-statistic:
+      path: /statistic/**
+      serviceId: admin-news
+      stripPrefix: false
