@@ -192,7 +192,8 @@ big-data:
   # 新闻评论个人排名
     news-review-personal-ranks-api: http://192.168.1.57:8088/v1/news/statistics/users/%s/comment
 seaweedfs:
-  host: seaweedfs
-  port: 9333
+  host: 47.244.47.227
+  port: 8333
   timeout: 50000
   maxConnection: 100
+  file-server-path: http://pre.tnaot.com
