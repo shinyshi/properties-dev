@@ -11,9 +11,9 @@ spring:
       enabled: false
   datasource:
     default-data-base: mongcent_news
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
-    username: dbuser
-    password: asdQWE!@#
+    url: jdbc:mysql://192.168.1.136:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: 123456asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -38,9 +38,9 @@ spring:
         login-username: druid
         login-password: druid
   mongcentShop:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
-    username: dbuser
-    password: asdQWE!@#
+    url: jdbc:mysql://192.168.1.136:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -65,9 +65,9 @@ spring:
         login-username: druid
         login-password: druid
   mongcentMarketing:
-    url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
-    username: dbuser
-    password: asdQWE!@#
+    url: jdbc:mysql://192.168.1.136:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
