@@ -240,13 +240,13 @@ xxl:
   job:
     accessToken:
     admin:
-      addresses: http://192.168.1.137:7080/xxl-job-admin
+      addresses: http://192.168.1.136:7080/xxl-job-admin
     executor:
       appname: tnaot-admin-life
       ip:
       logpath: /home/logs/tnaot/task/jobhandler
       logretentiondays: 5
-      port: 9098
+      port: 6091
 upload:
   url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
   keyId: LTAIQ0IV2BcwuDYiYY
