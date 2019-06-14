@@ -30,20 +30,20 @@ spring:
 aicloud:
   datasource:
      datasourceName: mongcent_news
-     url: jdbc:mysql://192.168.1.170:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
+     url: jdbc:mysql://192.168.1.136:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
      username: dbuser
      password: asdQWE!@#
      minIdle: 20
      maxActive: 20
   datasources:
      - datasourceName: mongcent_shop
-       url: jdbc:mysql://192.168.1.170:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
+       url: jdbc:mysql://192.168.1.136:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
        username: dbuser
        password: asdQWE!@#
        minIdle: 20
        maxActive: 20
      - datasourceName: mongcent_marketing
-       url: jdbc:mysql://192.168.1.170:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
+       url: jdbc:mysql://192.168.1.136:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useServerPrepStmts=false
        username: dbuser
        password: asdQWE!@#
        minIdle: 20

@@ -1,6 +1,6 @@
 spring:
   datasource:
-      url: jdbc:mysql://192.168.1.170:3306/message?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      url: jdbc:mysql://192.168.1.136:3306/message?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: dbuser
       password: asdQWE!@#
       driver-class-name: com.mysql.jdbc.Driver
