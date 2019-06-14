@@ -2,7 +2,7 @@ logging:
   config: classpath:log4j2-dev.xml
 spring:
   application:
-    name: tnaot-admin-life
+    name: tnaot-admin
   jackson:
     serialization:
       write-dates-as-timestamps: true
