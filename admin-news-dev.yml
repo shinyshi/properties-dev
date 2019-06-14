@@ -293,15 +293,16 @@ big-data:
     modify-aicomment-url: http://172.31.0.23:7026/review/update
     delete-review-tag-url: http://172.31.0.23:7026/review/tagDel
     update-tag-name-url: http://172.31.0.23:7026/review/updateTagName
-    news-type-report-url: http://47.52.150.234:8088/v1/operator/statistics/news/type
-    news-type-total-report-url: http://47.52.150.234:8088/v1/operator/statistics/news/type/count
-    news-channel-report-url: http://47.52.150.234:8088/v1/operator/statistics/news/channel
-    news-channel-read-report-url: http://47.52.150.234:8088/v1/operator/statistics/news/channel/read
-    news-search-wordReport-url: http://47.52.150.234:8088/v1/operator/statistics/search-word
-    user-approve-report-url: http://47.52.150.234:8088/v1/operator/statistics/approve
-    user-release-report-url: http://47.52.150.234:8088/v1/operator/statistics/release
-    news-comment-report-url: http://47.52.150.234:8088/v1/operator/statistics/comment
-    statistics-members-url: http://47.52.150.234:8088/v1/operator/statistics/members
+    #报表
+    news-type-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/type
+    news-type-total-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/type/count
+    news-channel-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/channel
+    news-channel-read-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/channel/read
+    news-search-wordReport-url: http://47.90.62.87:8088/v1/operator/statistics/search-word
+    user-approve-report-url: http://47.90.62.87:8088/v1/operator/statistics/approve
+    user-release-report-url: http://47.90.62.87:8088/v1/operator/statistics/release
+    news-comment-report-url: http://47.90.62.87:8088/v1/operator/statistics/comment
+    statistics-members-url: http://47.90.62.87:8088/v1/operator/statistics/members
 oss:
   config:
     key-id: LTAIQ0IV2BcwuDYiYY
