@@ -9,8 +9,8 @@ spring:
       enabled: false
   datasource:
     url: jdbc:mysql://192.168.1.136:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&useSSL=false&useAffectedRows=true
-    username: dbuser
-    password: asdQWE!@#
+    username: root
+    password: 123456asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
