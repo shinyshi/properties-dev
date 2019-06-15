@@ -1,4 +1,4 @@
-logging:
+1logging:
   config: classpath:log4j2-dev.xml
 spring:
   application:
@@ -108,7 +108,7 @@ spring:
       cluster-name: tnaot-news
       cluster-nodes: 192.168.1.137:9300
       repositories:
-        enabled: true
+         enabled: true
   rabbitmq:
     host: 192.168.1.112
     port: 5672
