@@ -104,6 +104,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://test:123456@192.168.1.112:27017/tnaot
+    elasticsearch:
+      cluster-name: tnaot-news
+      cluster-nodes: 192.168.1.137:9300
+      repositories:
+        enabled: true
   rabbitmq:
     host: 192.168.1.112
     port: 5672
