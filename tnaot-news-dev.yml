@@ -198,3 +198,6 @@ seaweedfs:
   timeout: 50000
   maxConnection: 100
   file-server-path: http://pre.tnaot.com
+tnaot:
+  constant:
+    share-link: http://rest.tnaot.com:8080/
