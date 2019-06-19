@@ -60,6 +60,7 @@ payconfig:
     pay-order-url: http://103.242.56.40:9001/upg/v2/merchantTransfer
     pay-order-url-h5: http://103.242.56.40:9001/upg/v2/createWapOrder
     pay-order-url-user-scan: http://103.242.56.40:9001/upg/v2/createUserScanOrder
+    download-bill:  http://103.242.56.40:9001/upg/v2/downloadbill
     query-order-url: http://103.242.56.40:9001/upg/v2/queryOrder
     refund-order-url: http://103.242.56.40:9001/upg/v2/refundOrder
     return-url: http://192.168.1.136:8090/rest/shop/notify/front/mpay
