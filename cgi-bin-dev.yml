@@ -33,7 +33,7 @@ payconfig:
     app-id: 2018092561526368
     pay-url: https://openapi.alipay.com/gateway.do
     ras-private-key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCP7ZP+ny+FE/kZGcMj7nyyqfc4mB3r11VInZoGMRPyi27q9A2YTZ+GQUbuINLG9emD4tZULMrQWfiz2h/LVqVW4dIYV3UPN04tdjrJf7pbIKiO2sr2XeSOlxlarfwOJHEeiDIWHPKnrazTByAy5gQ9JQIaNDn7uJDfMUbc51nuhenXe4BJjnjkouHtGldEYiURbDagBA3Q6zT9XXmPQUUqSHn290kMOYIxNWVVlT49Hfdy28Ik0sW/ynu1XliUqbbEgFGPKhgnvOgtSMs/aWBbhVZ3XNggsf0xlJEPd/3TlJtgl9lZdos/yE8V/TUPK6uUUtRyS9GQqJtRwJOyMcYzAgMBAAECggEAYjqLHuQV0oVnJLJodEV35ZgKmh13jlZQZlbpoAAu1QJEmSYngSK5FS/H8Q2FzTRYQyK1lI1dfgVpr5XWzTg9b6Z/dQ17Xv8n4+8lABCkZz1KzPSWQL6kFo0ZSMIlnKFScrwRMvZexgHKSdw7JYHGstRnMusiB6JXfXxsGKfswNSp0GTDGV/EqPW9hLK+RdTut7E5QF+bZq8ijVbCtoxzfqK9PLlWkHmE1VcXkEoZ1q0X0xqrsL7Ji5KHwpI5SRPsguR4URuy9bEdbmx/4t4ln6UWDYNEwUQlUe3ZSq+B9r6H4UarpEZzvGHC4w4B+V1LuOzSvpEPU+Hsh/Lnnx2TgQKBgQDnIQ0LF0JnP0ndxj3U1C2UOh7+6u0m2R7WLfooMPxk86nO7s+KXW1pBU7UZcjooIPU4IxwUdXFB6eVYQ2bfAN0+edScHCe2YP8QNhXzQSvFCB7haHz+rfHmJLUUIL34AhwlULxePKzkMps3k1/UcrJaNcj3VqluH4+Iy2hDY0U+wKBgQCfamLOxKog45sBWEPV87xNALG3ckeww9CHrE6TXSzHm4vfdkiCmUbHicoDIpz6Qq5KUHPdgOBfTbO1K3YUWV0aDeZzhtK5uJwr+8RjyoAd2sUF4N9fBF0qQNjUjXSy8qy674MrTkGt0TWoUGgdXH7YbV5pCq/MWTBErLkLuSweKQKBgCNQFGsWYanerI16xWWoCVK1UpkGEbe2wpRcr/TGDznpVI9uQz1Tquy5x+KBrqGELMAwkqRyjGOvGLak/mw8FVcg+2vIDBzpBNZcnfFEPKv3OkNFFoptSvju4bgYmPoAO6nf1DuKjCJNQ/BAQrzqJT6CiyRKpJffSUJ7I3SQ2nZTAoGABLvJ903Lp3Jate2DBiVYoAi3PjU8f7kwxfaN1r5biAnMW3RNruMSQPaMcw9iDeRQ/I/rANbE0s+h2G1T8kK9CvsCrseAFleu+3dcW4I1z60hUI1e1JlyksCeL6GLp4yhKGPYRz7poFmn+Dl6/fQzKAYHWaMhmTXEwyVF0V1MPBECgYBrG5iB46+jWm1ZRT6cDMJYupfkcH4CzfiLY/wY7894akSkkg6tnTarQh51Mq82epm8BEh1K2EM9RkS0T2bLh/bPkKa8O9ofeINmWSPE3LEepQ+yhb9GjsDAfy+C/XPhxuCPRdm8GRVKrWnQf76FOHwllSgg9H0qalKu+Zc/pyJjw==
-    notify-url: http://rest.tnaot.com:8080/rest/shop/notify/payment/alipay
+    notify-url: http://192.168.1.136:8090/rest/shop/notify/payment/alipay
     timeout-express: 30
     seller-id: 2088231841236080
   tenpay:
@@ -41,7 +41,7 @@ payconfig:
     app-secret: 746a6d3ca6f6499055effad514cd7538
     app-mch-id: 1515844081
     api-key: 1af3ecc644f4478aabaeb386fdedaa2b
-    notify-url: http://rest.tnaot.com:8080/rest/shop/notify/payment/tenpay
+    notify-url: http://192.168.1.136:8090/rest/shop/notify/payment/tenpay
     h5-id: wx3a4fb0286f7945aa
     h5-mch-id: 1515222121
   huione:
@@ -61,8 +61,8 @@ payconfig:
     pay-order-url-h5: http://103.242.56.40:9001/upg/v2/createWapOrder
     query-order-url: http://103.242.56.40:9001/upg/v2/queryOrder
     refund-order-url: http://103.242.56.40:9001/upg/v2/refundOrder
-    return-url: http://rest.tnaot.com:8080/rest/shop/notify/front/mpay
-    notify-url: http://rest.tnaot.com:8080/rest/shop/notify/payment/mpay
+    return-url: http://192.168.1.136:8090/rest/shop/notify/front/mpay
+    notify-url: http://192.168.1.136:8090/rest/shop/notify/payment/mpay
     front_fail_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
     front_success_url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
   pipay:
@@ -72,11 +72,11 @@ payconfig:
     did: 8085
     pay-order-url: https://onlinepayment-test.pipay.com/starttransaction
     query-order-url: https://onlinepayment-test.pipay.com/rest-api/verifyTransaction
-    return-url: http://rest.tnaot.com:8080/rest/shop/notify/front/pipay
+    return-url: http://192.168.1.136:8090/rest/shop/notify/front/pipay
     front-fail-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentFail
     front-success-url: http://lifetest.tnaot.com/rechargeIndex/prepaidIndex/paymentSuccess
   wing:
-    return_url: http://rest.tnaot.com:8080/rest/shop/notify/front/wing
+    return_url: http://192.168.1.136:8090/rest/shop/notify/front/wing
     username: Koh thmey Technology Co.,Ltd
     rest_api_key: c9aecc2699fcf0135850e81a38d0625576a24c8f595a95f7a73aabe87ded7cab
     biller_code: 5120
@@ -88,11 +88,11 @@ xxl:
   job:
     accessToken:
     admin:
-      addresses: http://192.168.1.137:7080/xxl-job-admin
+      addresses: http://192.168.1.136:7080/xxl-job-admin
     executor:
       appname: tnaot-cgibin
       ip:
       logpath: /home/logs/tnaot/task/jobhandler
       logretentiondays: 5
-      port: 9098
+      port: 6095
       

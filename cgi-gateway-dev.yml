@@ -1,0 +1,66 @@
+logging:
+  config: classpath:logback-pre.xml
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  mvc:
+    favicon:
+      enabled: false
+  cloud:
+    config:
+      username: admin
+      password: 123456
+      profile: #spring.profiles.active#
+      discovery:
+        enabled: true
+        service-id: tnaot-server-config
+    gateway:
+      routes:
+      - id: cgi-bin_v1
+        uri: lb://cgi-bin
+        predicates:
+        - Path=/user/**
+      - id: cgi-bin_v2
+        uri: lb://cgi-bin
+        predicates:
+        - Path=/wallet/**
+      - id: cgi-bin_v3
+        uri: lb://cgi-bin
+        predicates:
+        - Path=/payment/**
+      - id: cgi-bin_v4
+        uri: lb://cgi-bin
+        predicates:
+        - Path=/push/**
+      - id: cgi-auth
+        uri: lb://cgi-auth
+        predicates:
+        - Path=/auth/**
+      discovery:
+        locator:
+          lower-case-service-id: true
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: PT2S
+    lettuce:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+      

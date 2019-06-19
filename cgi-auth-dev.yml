@@ -1,0 +1,54 @@
+logging:
+  config: classpath:logback-pre.xml
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  mvc:
+    favicon:
+      enabled: false
+  datasource:
+      druid:
+        url: jdbc:mysql://172.31.0.47:3306/mongcent_auth?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+        username: root
+        password: 123456asdQWE!@#
+        initial-size: 2
+        min-idle: 2
+        max-active: 20
+        test-on-borrow: true
+        driver-class-name: com.mysql.jdbc.Driver
+        max-wait: 10000
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: PT2S
+    lettuce:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
+mybatis:
+  type-aliases-package: com.tnaot.**.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    call-setters-on-nulls: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+      
