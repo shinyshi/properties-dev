@@ -156,7 +156,3 @@ zuul:
       path: /actuator/refresh
       serviceId: admin-life
       stripPrefix: false
-    api-hot-git1:
-      path: /refresh
-      serviceId: admin-life
-      stripPrefix: false
