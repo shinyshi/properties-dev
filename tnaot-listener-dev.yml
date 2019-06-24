@@ -106,8 +106,8 @@ push:
     project-id: earnest-star-187502
     database-url: https://earnest-star-187502.firebaseio.com
   jpush:
-    and-app-key: 8a4b4260053b7487e3de4e8f
-    and-master-secret: 86ed8517af4a4e16e9c85124
+    and-app-key: 68729133aaf2c03f1e9d763c
+    and-master-secret: 54e9acaabc477022e202010b
     ios-app-key: 12c6c437e7f0bd35db10a9c7
     ios-master-secret: 6b56e7e47d8d84fd4c0a52b1
     is-pro: false
