@@ -112,5 +112,5 @@ oss:
   config:
     key-id: LTAIQ0IV2BcwuDYiYY
     key-secret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
-    url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
+    url: http://192.168.1.57:7023/v2/users/upload/file
     url-compress: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLoginWithoutCompress
