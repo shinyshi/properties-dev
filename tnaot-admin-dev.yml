@@ -152,9 +152,16 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   MaxTotalHttpConnections: 10000
   MaxConnectionsPerHost: 3000
-management: 
+management:
   security:
-    enabled: false
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 ftp:
   host: 192.168.1.136
   port: 21

@@ -96,7 +96,14 @@ ribbon:
 management:
   context-path: /listener
   security:
-    enabled: false
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 push:
   firebase:
     service-account: '{ "type": "service_account", "project_id": "earnest-star-187502", "private_key_id": "5d32f4c154242c0a154878b31837a8fa85f40aec", "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4uyaKh5LGIPCZ\nVn6KLpef+sqPCg5XbR6gDabn3JjNLowdou50H5B9YsZFkMWfd5rF8JCl2/XfT9Oy\nqhC55du2PX4f3kbO3aaX8hRdjYjxAjEqJJBogwWBj9K5P26WTx9OT6vriqZrdjha\n5OPEN+Ck8ecRoPXqb7JzoGZnzHChMgCmSsHCj1dUlcP6iB3Vw6UUhejzJ1bgOoHZ\nlTNVXUp5dPPten8j0XL5kpIFMfIHLz6UF4O97NPOA4jKD8kqZTJEsWGYgIye6t9R\nJFR/YJSKP9a23XRUb0hqRPQ3Yt+S/RbYRpF5AxWglcSfS3WPJU8nt/S2kgpqYFNg\nyFStjw5fAgMBAAECggEAGWDB519p+doQnkrUUNDHIm07t/GJDYL/erwlZSOtwj0A\nzBl+v2k5WmBgHgfI082EmmjKwQkPesGRXbF2DB6DKULCuZy5sYr1wK4QaixwLFvs\nESlmGqrVQ3qqAlUFMOpnF0UOuJRwTxcLSuwNoP6O2ATQ2l/N04p2GOMSQ8mW4i4A\n6wmXpWbZbyTLKaGwqcPWbjaNNDaOAkFcukkm8QsA5UrEyQsUkwmAiWT+c+WeJTjU\nQM3GSOTr/aiTDiGJuzr5xd2qOGyFnRdE6P3MXiTXNYXQDWMwfE0T8+iez8wNeAZ6\naxy1QznRmYz8CYiilTP4iPZeB1tBNQNqiiXMY3HSgQKBgQDzFSj6XOslT73qbk3a\nvNzQvoiZNFigzfmJSYguq57Awyw5dNuyUGSmIU+uN+t8vfGbg1ITDgUgbJjkyLIQ\n6rwTWkpP/JcxQwnok+64tUaaytuEFM/fBG4/1146V5qBGjQGWSATr9wevV9E6i1x\nPfpVhVe3i21yiQQLOt8w7F1SIQKBgQDCjDBbBEAo+iVB1M36NU1p1whXa3IzLSuP\nia9g/e3fZ0kHjSdGWV2SW/FOzUEXqGQOf9B6wK9IF6SWbokTbIJdgNCmo1vs7r5G\nQHpmIHfh/EmH+pR1WSwTQYHScrk5o2GDtB6AD/W2XEltuPcT+rGu+mtp6ZNkyVNY\n6uQocHlQfwKBgCg10t5/amJ0q2zRLE3HuhtJuVzmfNa029dq830M5KjsYC9s9j6r\n78pPblfaZjjvTr0z3urKAe0YKb6GuHX17oChCfPrS7NZbJUti2rAidpnPiK+Mpio\nqfgjjzHFdghvJjX6nkTDbX0kRFMpDbVS1Es7UIRLKyKsKaAV7/+uyc0hAoGATMxo\nflWEOmjc8krecOo/wAtJ2LCqqTcongYdPG2hTHKKare3DFdUz+UJsjDmhD9OGEcu\ndna/+vaSW2wRIqDQKbcjJtUQAc0RQcxMRSqGCKi+IjayCk0EUCmo5Pmy0uUDJqmg\n7K7gMXfm6LB+oN1y7P8gDfRN4hhzlYNMRAZ6bWMCgYB2HmSHdIVi4lMSPXpqm4LY\nORphroK8dTUr+t70NiKkvcNvgAJtp5LJsYKgPu16i5z+5WKrtmeE9waI24gm/j0g\nNd1sj2BuYNJXqcrF3a6UuTvkd/SOBy2+vLw2oDAJYT0tGhQaMdtOkmvmDs4kx7uR\n9wQIozYWOD2QZqtioBKs8w==\n-----END PRIVATE KEY-----\n", "client_email": "firebase-adminsdk-lgnlk@earnest-star-187502.iam.gserviceaccount.com", "client_id": "103795976778379540002", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-lgnlk%40earnest-star-187502.iam.gserviceaccount.com" }'

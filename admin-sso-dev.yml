@@ -86,4 +86,11 @@ ribbon:
   MaxConnectionsPerHost: 3000
 management:
   security:
-    enabled: false
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

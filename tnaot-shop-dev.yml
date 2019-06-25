@@ -104,7 +104,14 @@ ribbon:
 management:
   context-path: /shop
   security:
-    enabled: false
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
 tx-lcn:
     client:
         manager-address: 192.168.1.112:8070
