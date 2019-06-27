@@ -115,6 +115,9 @@ spring:
       max-request-size: 100Mb
   messages:
     basename: i18n/messages
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/admin
     elasticsearch:
       cluster-name: tnaot-news
       cluster-nodes: 192.168.1.137:9300
