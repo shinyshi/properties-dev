@@ -78,10 +78,10 @@ zuul:
     use-separate-thread-pools: true
     thread-pool-key-prefix: zuulgw
   host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-    max-total-connections: 10000
-    max-per-route-connections: 5 
+    connect-timeout-millis: 300000
+    socket-timeout-millis: 300000
+    max-total-connections: 400000
+    max-per-route-connections: 5
   routes:  
     api-login:
       path: /login
