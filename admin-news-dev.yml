@@ -8,9 +8,9 @@ spring:
     name: admin-news
   datasource:
     default-data-base: mongcent_news
-    url: jdbc:mysql://192.168.1.112:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://192.168.136:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
     username: root
-    password: WLBNLk6XgY!@#
+    password: 123456asdQWE!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
