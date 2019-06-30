@@ -1,73 +1,16 @@
 logging:
   config: classpath:log4j2-dev.xml
 spring:
-  application:
-    name: admin-news
   jackson:
     serialization:
       write-dates-as-timestamps: true
-  mvc:
-    favicon:
-      enabled: false
+  application:
+    name: admin-news
   datasource:
     default-data-base: mongcent_news
-    url: jdbc:mysql://47.75.120.141:3312/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://192.168.1.112:3306/mongcent_news?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
     username: root
-    password: ufBBgZaZzGQy0Uzn
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      initial-size: 2
-      min-idle: 2
-      max-active: 20
-      max-wait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 30000
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      validationQuery: select 'x'
-      poolPreparedStatements: true
-      maxPoolPreparedStatementPerConnectionSize: 20
-      filters: stat,wall
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      useGlobalDataSourceStat: true
-      web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-      stat-view-servlet:
-        login-username: druid
-        login-password: druid
-  mongcentShop:
-    url: jdbc:mysql://192.168.1.136:3306/mongcent_shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: 123456asdQWE!@#
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      initial-size: 2
-      min-idle: 2
-      max-active: 20
-      max-wait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 30000
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      validationQuery: select 'x'
-      poolPreparedStatements: true
-      maxPoolPreparedStatementPerConnectionSize: 20
-      filters: stat,wall
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      useGlobalDataSourceStat: true
-      web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-      stat-view-servlet:
-        login-username: druid
-        login-password: druid
-  mongcentMarketing:
-    url: jdbc:mysql://192.168.1.136:3306/mongcent_marketing?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: 123456asdQWE!@#
+    password: WLBNLk6XgY!@#
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -103,31 +46,30 @@ spring:
         min-idle: 1
         max-wait: PT2S
   rabbitmq:
-    host: 192.168.1.112
-    port: 5672
+    host: 192.168.1.136
+    port: 5671
     username: rabbit
     password: 123456
     publisher-confirms: true
     virtual-host: /
+    listener: 
+      simple:
+        acknowledge-mode: manual
+  data:
+    mongodb:
+      uri: mongodb://admin:123456@192.168.1.136:27018/admin
+    elasticsearch:
+      cluster-name: tnaot-news
+      cluster-nodes: 172.31.0.34:9300
+      repositories:
+        enabled: true
   servlet:
     multipart:
       max-file-size: 100Mb
       max-request-size: 100Mb
-  messages:
-    basename: i18n/messages
-  data:
-    mongodb:
-      uri: mongodb://Mongocent:kizach*i2lief5@47.75.229.228:27017/tnaot
-    elasticsearch:
-      cluster-name: tnaot-news
-      cluster-nodes: 192.168.1.137:9300
-      repositories:
-        enabled: true
 mybatis:
   type-aliases-package: com.tnaot.**.entity
   mapper-locations: classpath*:mapper/*/*Mapper.xml
-  configuration:
-    call-setters-on-nulls: true
 pagehelper:
   helperDialect: mysql
   reasonable: false
@@ -141,15 +83,24 @@ feign:
   hystrix:
     enabled: true
 hystrix:
-  command:
+  threadpool:
     default:
+      coreSize: 50
+      maximumSize: 10000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
+ribbon: 
+  ConnectTimeout: 20000
+  ReadTimeout: 20000 
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 10000
+  MaxConnectionsPerHost: 3000
 management:
-  security:
-      enabled: false
   endpoints:
     web:
       exposure:
@@ -157,19 +108,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-ftp:
-  host: 192.168.1.136
-  port: 21
-  username: upload
-  password: wenjianshangchuan
-  basePath: /home/upload
-  fileServerPath: http://192.168.1.136:9999
-  imageFolder: image
-  thumbFolder: thumbs
-  videoFolder: video
 path:
   newsShareLinkUrl: http://task.t.tnaot.com/news_share/
-  mediaWebUrl: http://47.75.132.145:8098
+  mediaWebUrl: http://192.168.1.40:8088
 push:
   firebase:
     serviceAccount: '{ "type": "service_account", "project_id": "earnest-star-187502", "private_key_id": "5d32f4c154242c0a154878b31837a8fa85f40aec", "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4uyaKh5LGIPCZ\nVn6KLpef+sqPCg5XbR6gDabn3JjNLowdou50H5B9YsZFkMWfd5rF8JCl2/XfT9Oy\nqhC55du2PX4f3kbO3aaX8hRdjYjxAjEqJJBogwWBj9K5P26WTx9OT6vriqZrdjha\n5OPEN+Ck8ecRoPXqb7JzoGZnzHChMgCmSsHCj1dUlcP6iB3Vw6UUhejzJ1bgOoHZ\nlTNVXUp5dPPten8j0XL5kpIFMfIHLz6UF4O97NPOA4jKD8kqZTJEsWGYgIye6t9R\nJFR/YJSKP9a23XRUb0hqRPQ3Yt+S/RbYRpF5AxWglcSfS3WPJU8nt/S2kgpqYFNg\nyFStjw5fAgMBAAECggEAGWDB519p+doQnkrUUNDHIm07t/GJDYL/erwlZSOtwj0A\nzBl+v2k5WmBgHgfI082EmmjKwQkPesGRXbF2DB6DKULCuZy5sYr1wK4QaixwLFvs\nESlmGqrVQ3qqAlUFMOpnF0UOuJRwTxcLSuwNoP6O2ATQ2l/N04p2GOMSQ8mW4i4A\n6wmXpWbZbyTLKaGwqcPWbjaNNDaOAkFcukkm8QsA5UrEyQsUkwmAiWT+c+WeJTjU\nQM3GSOTr/aiTDiGJuzr5xd2qOGyFnRdE6P3MXiTXNYXQDWMwfE0T8+iez8wNeAZ6\naxy1QznRmYz8CYiilTP4iPZeB1tBNQNqiiXMY3HSgQKBgQDzFSj6XOslT73qbk3a\nvNzQvoiZNFigzfmJSYguq57Awyw5dNuyUGSmIU+uN+t8vfGbg1ITDgUgbJjkyLIQ\n6rwTWkpP/JcxQwnok+64tUaaytuEFM/fBG4/1146V5qBGjQGWSATr9wevV9E6i1x\nPfpVhVe3i21yiQQLOt8w7F1SIQKBgQDCjDBbBEAo+iVB1M36NU1p1whXa3IzLSuP\nia9g/e3fZ0kHjSdGWV2SW/FOzUEXqGQOf9B6wK9IF6SWbokTbIJdgNCmo1vs7r5G\nQHpmIHfh/EmH+pR1WSwTQYHScrk5o2GDtB6AD/W2XEltuPcT+rGu+mtp6ZNkyVNY\n6uQocHlQfwKBgCg10t5/amJ0q2zRLE3HuhtJuVzmfNa029dq830M5KjsYC9s9j6r\n78pPblfaZjjvTr0z3urKAe0YKb6GuHX17oChCfPrS7NZbJUti2rAidpnPiK+Mpio\nqfgjjzHFdghvJjX6nkTDbX0kRFMpDbVS1Es7UIRLKyKsKaAV7/+uyc0hAoGATMxo\nflWEOmjc8krecOo/wAtJ2LCqqTcongYdPG2hTHKKare3DFdUz+UJsjDmhD9OGEcu\ndna/+vaSW2wRIqDQKbcjJtUQAc0RQcxMRSqGCKi+IjayCk0EUCmo5Pmy0uUDJqmg\n7K7gMXfm6LB+oN1y7P8gDfRN4hhzlYNMRAZ6bWMCgYB2HmSHdIVi4lMSPXpqm4LY\nORphroK8dTUr+t70NiKkvcNvgAJtp5LJsYKgPu16i5z+5WKrtmeE9waI24gm/j0g\nNd1sj2BuYNJXqcrF3a6UuTvkd/SOBy2+vLw2oDAJYT0tGhQaMdtOkmvmDs4kx7uR\n9wQIozYWOD2QZqtioBKs8w==\n-----END PRIVATE KEY-----\n", "client_email": "firebase-adminsdk-lgnlk@earnest-star-187502.iam.gserviceaccount.com", "client_id": "103795976778379540002", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-lgnlk%40earnest-star-187502.iam.gserviceaccount.com" }'
@@ -179,11 +120,11 @@ push:
     projectId: earnest-star-187502
     databaseUrl: https://earnest-star-187502.firebaseio.com
   jpush:
-    andAppKey: 8a4b4260053b7487e3de4e8f
-    andMasterSecret: 86ed8517af4a4e16e9c85124
-    iosAppKey: 12c6c437e7f0bd35db10a9c7
-    iosMasterSecret: 6b56e7e47d8d84fd4c0a52b1
-    isPro: false
+    and-app-key: 68729133aaf2c03f1e9d763c
+    and-master-secret: 54e9acaabc477022e202010b
+    ios-app-key: 12c6c437e7f0bd35db10a9c7
+    ios-master-secret: 6b56e7e47d8d84fd4c0a52b1
+    is-pro: false
 memcached:
   servers: 47.52.144.242:22122
   poolSize: 10
@@ -204,6 +145,7 @@ payconfig:
     api-key: 1af3ecc644f4478aabaeb386fdedaa2b
     notify-url: http://rest.tnaot.com:8080/shop/notify/payment/tenpay
   huione:
+    query-url: https://open.huione.com/?_c=gateway&_a=orderQuery
     app-id: 2f73c4cf27abee6e
     ras-private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALyl/B0RVu6HJq/M7tJurnnAG38d2HQD/AUjhC5nTj5bsxT6VjzTEvzeTe7c2bPfK9/2IkOK7XjOFwE6JyEXxM1N1kPo2q4xh5rukhtlBSAijx2RebHsRtq6DI+vJgY5BBC0ZcuwR91B9gbVBfbj9isu6q2CgftkHbYFR/Fo8aQrAgMBAAECgYEAoZflD9ksiAIJJ4n6AROCLRRb+VVNdoN7O8OilEU1hsDx88REXrHHkAe05ikT6rn+UUf7LbQxmsuedRSlM/myP1mgcixhtAgIiZdnrXw3qZKqYW4NODHl5nwYWsQXV1paooeMqRO5X2KBAOgvhHkSF63UGDkOGkvo7Suzq24Rl2ECQQDoLCNDr5SvoeiTApXAPt7NXI7eiss+kwbIietjIdhm75it/tz8eb2Nku0+yuoxRKeoYvav9G9CMEcZ3xrKUW/5AkEA0AJXPGvckPPRF/a0u4+gBOSKjmveEFRvozCU76mwaFtGhMvIYslppOYgREOL+rk+k2ZoAgzl8zK78DZOaG2GQwJAbdws16NmpPDlH2MyvyRAw0YP6KgeYj6qEAyLEH58asDnKzYVFXb5xdsHXhYgWS3Wc6xYdIwidVxo2IokoCWG6QJAJhfnpfcS47DjIAJcQuUgpwS7oy1583+jGj2xaNqopdPhbDxtrDm6kSpbymScZAQ8w33DmmyGSC2IYYtwfItiRQJBALCmhfZ73O6wb9+SgWP3wQe/KLMXQftlFQyY69iEQbMfvhZ7V7SXK+M/tFHRWXaswkVZ7LMjMMNDHMMYcuHMwcA=
     alipay-public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIF5gfNdMLSWdL7Bnga5zQbiH1G+Gum6N0lNiGvfEgTYeiZUdbWX6qgIErXqJWC65mriu8ZPBJO+GWUbqeNMszrCv7XgkL8sS40S+mSEmY7Fii6KGaWJTGl970C3FK6WZmv0Gez8Iqjt1LcRzrum0N1xzoJfoVZ1Z+E8LjChO0pQIDAQAB
@@ -249,14 +191,14 @@ recharge:
     private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALGK137inpjgj+UUPPowP7KMHf6tavJzXKAzFhOsHRvmgd/9hqgv2aJD9OhDoMCGSrp+pOOUx2QtRCaKJ/PV+ucswheOgNjIvK0lW7rFgBsuYn4DU1WnQsv/Xw/EuLwgHzOOlBggdUdwxEO6IrY9kImWWiqUfKtXJ0O9IRE3XgtdAgMBAAECgYBds0UgNkI1tO68m/3CnQxBEyoRazzyUGgmNFAGeeOzAeixaoBS604VEYCDxI1mjnmKC6TCZ5cEC8/X9zo2ukv8LGhQBYFZ2qnPDCIApzb/2MVcBJYkhKeLh14dMO5wTwsGM3Y7YVuMmnYBtsk/GQVj8VI9GjmDqSaEjPxAM/q1EQJBAONMVV87R1WMgsZWtbJbLXrSAZMyVGpyu+BzEJecRWNDGj1rGs+r59f91hfpk6ls4fjoHyMOGV6ZF2DqYRiknSsCQQDH9hiH5qCqykAOx9GzMecZ32EY+8hJAoJ3QMDsMFHtTK4RJkY8wGNuPfl8IN/FhJOU35FQ/o7fSR7N89v22oWXAkEAq0ofHAEkJMga1TULADnN8DzKiw7mpsGH7AFKg7Z0Y/VxlM9eCRpXQWI9MRAJAyjWsijbLiO14qAkChkWyudiuQJAftaQ2uuk8JEYLwf68YLvB89VBQb5Fa682S4+8dL4tOCV7ZTsqq6So6Q2M9Gaf+zHvIBP6iN+tw3nt1Y/KgeVAwJBANK4QLVsAoOL2ayKcXaLFo2is/kLj6uEMp/Dc+uLesyYf/DDyrTD4TyrZDbP8Lt4zxVr360Qoaig+YZe9mnypek=
     public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxitd+4p6Y4I/lFDz6MD+yjB3+rWryc1ygMxYTrB0b5oHf/YaoL9miQ/ToQ6DAhkq6fqTjlMdkLUQmiifz1frnLMIXjoDYyLytJVu6xYAbLmJ+A1NVp0LL/18PxLi8IB8zjpQYIHVHcMRDuiK2PZCJlloqlHyrVydDvSERN14LXQIDAQAB
     client-id: kohthmey
-  ip-white-list:  127.0.0.1,0:0:0:0:0:0:0:1,219.135.171.94,47.244.30.161,113.68.108.15,47.75.132.145,183.48.71.101,192.168.226.1,136.228.128.128,192.168.242.1,192.168.111.1
+  ip-white-list:  127.0.0.1,0:0:0:0:0:0:0:1,219.135.171.94,47.244.30.161,113.68.108.15,47.75.132.145,183.48.71.101,136.228.128.128,183.48.71.78,136.228.128.128,183.48.70.163
 xxl:
   job:
     accessToken:
     admin:
-      addresses: http://192.168.1.137:7080/xxl-job-admin
+      addresses: http://192.168.1.136:7080/xxl-job-admin
     executor:
-      appname: tnaot-admin-news
+      appname: tnaot-admin
       ip:
       logpath: /home/logs/tnaot/task/jobhandler
       logretentiondays: 5
@@ -272,35 +214,34 @@ upload:
 fdfs:
   so-timeout: 1501 #socket连接超时时长
   connect-timeout: 2000 #连接tracker服务器超时时长
-  file-server-path: http://47.52.150.234:8888
+  file-server-path: http://pre.tnaot.com:8888
   thumb-image:             #缩略图生成参数
     width: 150
     height: 150
   tracker-list:            #TrackerList参数,支持多个
-    - 47.52.150.234:22122
+    - 172.31.0.23:22122
 big-data:
-  path:
+  path: 
     token: cd85279322a1fd81a2caeb7a7b4285ac
-    format-data-url: http://192.168.1.224:7023/news-content/format
-    update-news-tag-url: http://47.52.150.234:7024/news/updateTag
-    get-news-tags-url: http://47.52.150.234:7024/news/getTag
-    list-tag-url: http://47.52.150.234:7024/tag/list
-    get-tag-detail-url: http://47.52.150.234:7024/tag/detail
-    add-tag-url: http://47.52.150.234:7024/tag/add
-    update-tag-url: http://47.52.150.234:7024/tag/update
-    delete-tag-url: http://47.52.150.234:7024/tag/del
-      # 爬虫资讯标签转换地址
-    news-transform-tags-api:  http://192.168.1.224:7024/news/transformTag
-    keywords-url: http://172.31.0.23:8789/keywords/
-    get-aicomment-list-url: http://172.31.0.23:7026/review/list
-    update-aicomment-status-url: http://172.31.0.23:7026/review/status
-    delete-aicomment-url: http://172.31.0.23:7026/review/del
-    add-aicomment-url: http://172.31.0.23:7026/review/add
-    get-aicomment-detail-url: http://172.31.0.23:7026/review/detail
-    modify-aicomment-url: http://172.31.0.23:7026/review/update
-    delete-review-tag-url: http://172.31.0.23:7026/review/tagDel
-    update-tag-name-url: http://172.31.0.23:7026/review/updateTagName
-    #报表
+    format-data-url: http://47.90.62.87:7700/news-content/format
+    update-news-tag-url: http://172.31.0.23:7024/news/updateTag
+    get-news-tags-url: http://172.31.0.23:7024/news/getTag
+    list-tag-url: http://172.31.0.23:7024/tag/list
+    get-tag-detail-url: http://172.31.0.23:7024/tag/detail
+    add-tag-url: http://172.31.0.23:7024/tag/add
+    update-tag-url: http://172.31.0.23:7024/tag/update
+    delete-tag-url: http://172.31.0.23:7024/tag/del
+    # 爬虫资讯标签转换地址
+    news-transform-tags-api: http://172.31.0.23:7024/news/transformTag
+    keywords-url: http://47.90.62.87:8789/keywords/
+    get-aicomment-list-url: http://47.90.62.87:7026/review/list
+    update-aicomment-status-url: http://47.90.62.87:7026/review/status
+    delete-aicomment-url: http://47.90.62.87:7026/review/del
+    add-aicomment-url: http://47.90.62.87:7026/review/add
+    get-aicomment-detail-url: http://47.90.62.87:7026/review/detail
+    modify-aicomment-url: http://47.90.62.87:7026/review/update
+    delete-review-tag-url: http://47.90.62.87:7026/review/tagDel
+    update-tag-name-url: http://47.90.62.87:7026/review/updateTagName
     news-type-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/type
     news-type-total-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/type/count
     news-channel-report-url: http://47.90.62.87:8088/v1/operator/statistics/news/channel
@@ -310,16 +251,10 @@ big-data:
     user-release-report-url: http://47.90.62.87:8088/v1/operator/statistics/release
     news-comment-report-url: http://47.90.62.87:8088/v1/operator/statistics/comment
     statistics-members-url: http://47.90.62.87:8088/v1/operator/statistics/members
-oss:
-  config:
-    key-id: LTAIQ0IV2BcwuDYiYY
-    key-secret: w8yBL68zkbtLlfD9ITLYhhoiy5fUjyYY
-    url: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLogin
-    url-compress: http://upfile.tnaot.com:7803/upload/uploadFileWithoutLoginWithoutCompress
-    
+    cur-online-users-count: http://47.90.62.87:8088/v1/users/online
 seaweedfs:
-  host: 47.244.47.227
-  port: 8333
+  host: 192.168.1.137
+  port: 9333
   timeout: 50000
   maxConnection: 100
-  file-server-path: http://pre.tnaot.com
+  file-server-path: http://192.168.1.137
