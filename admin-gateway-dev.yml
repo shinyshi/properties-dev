@@ -1,6 +1,9 @@
 logging:
   config: classpath:logback-dev.xml
 spring:
+  main:
+    allow-bean-definition-overriding: true
+
   jackson:
     serialization:
       write-dates-as-timestamps: true
