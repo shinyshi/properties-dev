@@ -1,7 +1,5 @@
-validate:
-  token:
-     open: 0
-     key: zhqyd0ic?gReoBP%9
+logging:
+  config: classpath:logback-dev.xml
 spring:
   jackson:
     serialization:
@@ -9,6 +7,118 @@ spring:
   mvc:
     favicon:
       enabled: false
+  cloud:
+    gateway:
+      routes:
+      - id: api-login
+        uri: lb://admin-sso
+        predicates:
+        - Path=/login
+        
+      - id: api-logout
+        uri: lb://admin-sso
+        predicates:
+        - Path=/logout
+        
+      - id: api-updatePassword
+        uri: lb://admin-sso
+        predicates:
+        - Path=/update_password
+        
+      - id: api-admin
+        uri: lb://admin-life
+        predicates:
+        - Path=/admin/**
+        
+      - id: api-shop
+        uri: lb://admin-life
+        predicates:
+        - Path=/shop/**
+        
+      - id: api-marketing
+        uri: lb://admin-life
+        predicates:
+        - Path=/marketing/**
+        
+      - id: api-media
+        uri: lb://admin-news
+        predicates:
+        - Path=/media/**
+        
+      - id: api-life
+        uri: lb://admin-life
+        predicates:
+        - Path=/life/**
+        
+      - id: api-system
+        uri: lb://admin-life
+        predicates:
+        - Path=/system/**
+        
+      - id: api-risk
+        uri: lb://admin-life
+        predicates:
+        - Path=/risk/**
+        
+      - id: api-push
+        uri: lb://admin-life
+        predicates:
+        - Path=/push/**
+        
+      - id: api-member
+        uri: lb://admin-life
+        predicates:
+        - Path=/member/**
+        
+      - id: api-user
+        uri: lb://admin-life
+        predicates:
+        - Path=/user/**
+        
+      - id: api-news
+        uri: lb://admin-news
+        predicates:
+        - Path=/news/**
+        
+      - id: api-configuration
+        uri: lb://admin-news
+        predicates:
+        - Path=/configuration/**
+
+      - id: api-promotion
+        uri: lb://admin-news
+        predicates:
+        - Path=/promotion/**
+
+      - id: api-block
+        uri: lb://admin-news
+        predicates:
+        - Path=/block/**
+
+      - id: api-report
+        uri: lb://admin-news
+        predicates:
+        - Path=/report/**
+
+      - id: api-log
+        uri: lb://admin-news
+        predicates:
+        - Path=/log/**
+
+      - id: api-statistic
+        uri: lb://admin-news
+        predicates:
+        - Path=/statistic/**
+
+      - id: api-hot-git
+        uri: lb://admin-life
+        predicates:
+        - Path=/actuator/refresh
+
+      discovery:
+        locator:
+          lower-case-service-id: true
+          
   redis:
     host: 192.168.1.112
     port: 6379
@@ -20,16 +130,7 @@ spring:
         max-idle: 8
         min-idle: 1
         max-wait: PT2S
-mybatis:
-  type-aliases-package: com.tnaot.**.entity
-  mapper-locations: classpath*:mapper/*/*Mapper.xml
-  configuration:
-    call-setters-on-nulls: true
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
+
 eureka:
   client:
     healthcheck:
@@ -56,8 +157,6 @@ ribbon:
   MaxTotalHttpConnections: 10000
   MaxConnectionsPerHost: 3000
 management:
-  security:
-      enabled: false
   endpoints:
     web:
       exposure:
@@ -65,101 +164,3 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-memcached:
-  host: 47.52.144.242
-  port: 22122
-zuul:
-  sensitive-headers: Access-Control-Allow-Origin
-  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
-  okhttp:
-    enabled: true
-  ribbon-isolation-strategy: THREAD
-  thread-pool:
-    use-separate-thread-pools: true
-    thread-pool-key-prefix: zuulgw
-  host:
-    connect-timeout-millis: 300000
-    socket-timeout-millis: 300000
-    max-total-connections: 400000
-    max-per-route-connections: 5
-  routes:  
-    api-login:
-      path: /login
-      serviceId: admin-sso
-      stripPrefix: false
-    api-logout:
-      path: /logout
-      serviceId: admin-sso
-      stripPrefix: false
-    api-admin:
-      path: /admin/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-shop:  
-      path: /shop/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-marketing:  
-      path: /marketing/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-media:  
-      path: /media/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-life:
-      path: /life/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-system:
-      path: /system/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-risk:
-      path: /risk/**
-      serviceId: admin-life
-      stripPrefix: false 
-    api-push:
-      path: /push/**
-      serviceId: admin-life
-      stripPrefix: false 
-    api-member:
-      path: /member/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-user:
-      path: /user/**
-      serviceId: admin-life
-      stripPrefix: false
-    api-news:
-      path: /news/**
-      serviceId: admin-news
-      stripPrefix: false  
-    api-configuration:
-      path: /configuration/**
-      serviceId: admin-news
-      stripPrefix: false  
-    api-promotion:
-      path: /promotion/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-block:
-      path: /block/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-report:
-      path: /report/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-log:
-      path: /log/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-statistic:
-      path: /statistic/**
-      serviceId: admin-news
-      stripPrefix: false
-    api-hot-git:
-      path: /actuator/refresh
-      serviceId: admin-life
-      stripPrefix: false
