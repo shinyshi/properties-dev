@@ -60,9 +60,9 @@ spring:
       uri: mongodb://admin:123456@192.168.1.136:27018/admin
     elasticsearch:
       cluster-name: tnaot-news
-      cluster-nodes: 172.31.0.34:9300
+      cluster-nodes: 192.168.1.137:9300
       repositories:
-        enabled: true
+         enabled: true
   servlet:
     multipart:
       max-file-size: 100Mb
