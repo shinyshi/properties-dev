@@ -14,6 +14,17 @@ spring:
     password: 123456
     publisher-confirms: true
     virtual-host: /
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+    timeout: PT2S
+    lettuce:
+       pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: PT2S
 hystrix:
   command:
     default:
