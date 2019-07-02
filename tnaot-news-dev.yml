@@ -95,7 +95,7 @@ spring:
   messages:
     basename: i18n/messages
 jetcache:
-  statIntervalMinutes: 15
+  statIntervalMinutes: 1
   areaInCacheName: false
   hidePackages: com.tnaot
   local:
