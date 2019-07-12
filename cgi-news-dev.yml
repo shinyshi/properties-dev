@@ -182,6 +182,8 @@ big-data:
     token: cd85279322a1fd81a2caeb7a7b4285ac
   # 推荐资讯接口地址
     recomment-news-api: http://219.135.171.94:7025/news/channel
+  # 推荐资讯接口地址，IM数据接口使用
+    recomment-im-news-api: http://219.135.171.94:7025/news/channel
   # 推荐搜索关键词接口地址
     recomment-keyword-api: http://219.135.171.94:7025/word/searchword
   # 相关资讯接口地址
