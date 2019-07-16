@@ -37,10 +37,13 @@ spring:
         uri: lb://cgi-auth
         predicates:
         - Path=/auth/**
-      - id: cgi-news
+      - id: cgi-news-p1
         uri: lb://cgi-news
         predicates:
         - Path=/im/**
+      - id: cgi-news-p2
+        uri: lb://cgi-news
+        predicates:
         - Path=/article/**
       discovery:
         locator:
