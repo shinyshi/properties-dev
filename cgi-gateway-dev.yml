@@ -41,6 +41,7 @@ spring:
         uri: lb://cgi-news
         predicates:
         - Path=/im/**
+        - Path=/article/**
       discovery:
         locator:
           lower-case-service-id: true
