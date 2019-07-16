@@ -37,6 +37,10 @@ spring:
         uri: lb://cgi-auth
         predicates:
         - Path=/auth/**
+      - id: cgi-news
+        uri: lb://cgi-news
+        predicates:
+        - Path=/im/**
       discovery:
         locator:
           lower-case-service-id: true
