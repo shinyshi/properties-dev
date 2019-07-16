@@ -11,8 +11,7 @@ logging:
         seaweedfs:
           core:
             Connection: ERROR
-  
-
+            
 spring:
   freemarker:
     cache: false
