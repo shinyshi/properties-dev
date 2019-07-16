@@ -183,7 +183,7 @@ big-data:
   # 推荐资讯接口地址
     recomment-news-api: http://219.135.171.94:7025/news/channel
   # 推荐资讯接口地址，IM数据接口使用
-    recomment-im-news-api: http://219.135.171.94:7025/news/channel
+    recomment-im-news-api: http://192.168.1.224:7802/news/newsCall
   # 推荐搜索关键词接口地址
     recomment-keyword-api: http://219.135.171.94:7025/word/searchword
   # 相关资讯接口地址
